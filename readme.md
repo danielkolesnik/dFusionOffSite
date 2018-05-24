@@ -1,4 +1,4 @@
-# hairdresser #
+# COURSE JS_02_18 #
 
 #### We assume you have pre-installed node.js with npm, Gulp, Bower.
 
@@ -14,7 +14,7 @@ npm install -g gulp gulp-cli
 Clone repo:
 
 ```bash
-git clone https://https://bitbucket.org/SPerekhrest/hairdresser
+git clone https://github.com/course-js/JS_02_18.git
 ```
 
 Install dependencies
