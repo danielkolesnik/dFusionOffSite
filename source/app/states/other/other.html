@@ -1,0 +1,70 @@
+<div id="otherPage">
+    <div class="container-fluid">
+        <div class="row other-header-bg offset-bottom-8">
+            <div class="col-xs-12">
+                 <div class="other-header-holder text-center">
+                    <h2 class="text-white text-uppercase">Сделать можно все ! </h2>
+                     <p class="muted-text">
+                         &reg;
+                         &forall;
+                         &part;
+                         &exist;
+                         &empty;
+                         &nabla;
+
+                         &spades;
+                         &clubs;
+                         &hearts;
+                         &diams;
+
+                         &isin;
+                         &notin;
+                         &ni;
+                         &prod;
+                         &sum;
+                         &copy;
+                     </p>
+                 </div>
+            </div>
+        </div>
+        <div class="row other-content-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-7">
+                        <div class="other-inner offset-bottom-8">
+                            <p class="text-center" data-ng-if="vm.tabs.length == 0">
+                                Если вдруг данных нету =)
+                            </p>
+                            <uib-tabset active="active" data-ng-if="vm.tabs.length != 0">
+                                <uib-tab
+                                    data-index="$index"
+                                    class="text-uppercase"
+                                    data-heading="{{list.title}}"
+                                    data-ng-repeat="list in vm.tabs"
+                                        >
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <p class="text-center">
+                                                {{ list.description }}
+                                            </p>
+                                        </div>
+                                        <ul class="list-unstyled col-xs-9">
+                                            <li class="right-divider" data-ng-repeat="service in list.services">
+                                                {{ service.name }}
+                                            </li>
+                                        </ul>
+                                        <ul class="list-unstyled col-xs-3">
+                                            <li class="text-center" data-ng-repeat="service in list.services">
+                                                {{ service.price }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </uib-tab>
+                            </uib-tabset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

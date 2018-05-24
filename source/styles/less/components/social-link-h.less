@@ -1,0 +1,73 @@
+* {
+    /**
+     *
+     * declare local variables for social links based on global variables
+     *
+     */
+    @default-color: @grey-shade-12;
+    @hover-color: @link-hover-color;
+    @active-color: @bronze;
+    @visited-color: @yellow;
+
+    /**
+     * Example of using "social-link-h"
+     *
+     * list of decorators which we would use to add social icon : soc-facebook, soc-instagram, soc-website, soc-twitter,
+     * soc-youtube, soc-linkedin
+     *
+     * DECORATOR-NAME decorator for "social-link-h"
+     *
+     * use class "offset-right-1" to get indent between social icon and content laying after it
+     *
+     * template example
+     * <a href="" class="social-link-h DECORATOR-NAME offset-right-1"> Link </a>
+     *
+     * example for facebook
+     * <a href="" class="social-link-h soc-facebook offset-right-1"> Facebook </a>
+     */
+
+    .social-link-h {
+        color: @default-color;
+        &:hover {
+            text-decoration: none;
+            color: @hover-color;
+        }
+        /**
+         *
+         * the same behaivor for pseudoclass "focus" anf "active"
+         *
+         */
+        &:focus, &:active, &.active {
+            text-decoration: none;
+            outline: none;
+            color: @active-color;
+        }
+        &:visited {
+            color: @visited-color;
+        }
+    }
+    /**
+     *
+     * mixin for creating decorators
+     *
+     */
+    .soc-by-awesome-glyph ( @glyph, @margin ) {
+        &:before {
+            font: normal normal normal 14px/1 'FontAwesome';
+            font-size: inherit;
+            content: @glyph;
+            margin: @margin;
+        }
+    }
+    /**
+     *
+     * list of decorators
+     *
+     */
+    &.soc-instagram { .soc-by-awesome-glyph ("\f16d", 0); }
+    &.soc-facebook { .soc-by-awesome-glyph ("\f09a", 0); }
+    &.soc-website { .soc-by-awesome-glyph ("\f0ac", 0); }
+    &.soc-twitter { .soc-by-awesome-glyph ("\f099", 0); }
+    &.soc-youtube { .soc-by-awesome-glyph ("\f167", 0); }
+    &.soc-linkedin { .soc-by-awesome-glyph ("\f0e1", 0); }
+}
