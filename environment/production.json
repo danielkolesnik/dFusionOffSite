@@ -1,0 +1,6 @@
+{
+    "baseUrl": "/",
+    "production": true,
+    "initSourceMap": false,
+    "apiPath": "api/2"
+}
