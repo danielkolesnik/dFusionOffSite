@@ -1,0 +1,90 @@
+<footer id="footer">
+    <div class="container">
+        <!-- has addition style sheets for nice view by design -->
+        <div class="footer-content-holder">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-lg-4 offset-bottom-4">
+                    <h4 class="offset-bottom-4 text-white text-uppercase">Контактная информация</h4>
+                    <ul class="list-unstyled footer-text-grey">
+                        <li class="offset-bottom-2">
+                            <i class="fa fa-map-marker offset-right-2"></i>
+                            {{ vm.address }}
+                        </li>
+                        <li class="offset-bottom-2" data-ng-repeat="phone in vm.phones">
+                            <i class="fa fa-phone offset-right-2"></i>
+                            {{ phone.name }}: {{ phone.value }}
+                        </li>
+                        <li class="offset-bottom-2" data-ng-repeat="mail in vm.mailtoLinks">
+                            <a
+                                data-ng-href="{{ mail.linkValue }}"
+                                class="social-link-h"
+                                    >
+                                <i class="fa fa-envelope-o offset-right-2"></i>
+                                {{ mail.name }}: {{ mail.value }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 col-lg-3 offset-bottom-4">
+                    <h4 class="offset-bottom-4 text-white text-uppercase">
+                        Социальные сети
+                    </h4>
+                    <ul class="list-unstyled footer-text-grey">
+                        <li
+                            class="offset-bottom-2"
+                            data-ng-repeat="social in vm.socials"
+                            data-ng-if="social.link"
+                                >
+                            <a data-ng-href="{{ social.link }}" class="social-link-h">
+                                <i class="fa offset-right-2" data-ng-class="social.icon"></i>
+                                {{ social.name }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-5 col-lg-5 offset-bottom-4">
+                    <!-- Form for sending email -->
+                    <form name="sendEmail">
+                        <h4 class="offset-bottom-4 text-white text-uppercase">
+                            Подписаться
+                        </h4>
+                        <p class="offset-bottom-4 footer-text-grey">
+                            Укажите свой email, чтобы получать последние новости.
+                        </p>
+                        <div class="input-group widget">
+                            <input
+                                name="email"
+                                title="Subscribe"
+                                type="email"
+                                class="form-control widget-newsletter"
+                                placeholder="Email"
+                                required
+                                    >
+                            <div class="input-group-btn">
+                                <!--disable button because it doesn't work with server at that moment-->
+                                <button
+                                    data-ng-disabled="true"
+                                    title="Subscribe"
+                                    type="submit"
+                                    class="btn btn-h btn-light text-uppercase"
+                                        >
+                                    Подписаться
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="text-center footer-text-grey">
+                        &copy;
+                        JS_02_18
+                        2018-{{ vm.nextYear }}
+                        | Все права защищены
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

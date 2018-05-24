@@ -1,0 +1,202 @@
+#homePage {
+    /**
+     *
+     * Description text
+     * Local component
+     * Use to specify previous text
+     *
+     * example:
+     * <p class="text-description text-uppercase">Find something for yourself</p>
+     *
+     */
+    .text-description {
+        font-family: @font-family-montserrat;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+
+    /**
+     *
+     * Present page styles
+     * fixed background and vertical align content
+     *
+     */
+    #presentPage {
+        @container-height: 100vh; // local variable
+        @container-height-mobile: @container-height * 0.6;
+
+        background: linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)), rgba(36, 39, 38, 0.5)  url(../../../assets/images/mountains_sky_sunset_peaks_97149_3840x2400.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        height: @container-height;
+
+        @media ( max-width: @mobile-point ) {
+            height: @container-height-mobile;
+        }
+
+
+        /**
+         *
+         * set fixed height for parent container .present-wrap, use display: inline-block and additional
+         * class .helper for solve the problem of content vertical align
+         * takes from: https://habrahabr.ru/post/73113/
+         *
+         */
+        .present-wrap {
+            height: @container-height;
+            @media ( max-width: @mobile-point ) {
+                height: @container-height-mobile;
+            }
+
+            .present-content {
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 97%;//for media query
+            }
+
+            &:before {
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+                width: 0;
+            }
+        }
+    }
+
+    /**
+    *
+    * Visit contacts section styles
+    * fixed background
+    *
+    */
+    #visitContacts {
+        background: linear-gradient(rgba(30, 28, 24, 0.8), rgba(30, 28, 24, 0.8)), rgba(30, 28, 24, 0.8) url(../../../assets/images/i-best.jpg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+        background-attachment: fixed;
+
+        .contact-heading {
+            font-weight: @font-weight-bold;
+        }
+
+        .contact-text {
+            font-size: @font-size-h5;
+        }
+    }
+
+    /**
+     *
+     * Prices section styles
+     *
+     */
+    #prices {
+
+        /**
+         *
+         * use pseudo-elements to create two borders with different style
+         * use position properties to stretch element for necessary size
+         *
+         */
+        .border-holder {
+            background-color: @white;
+            position: relative;
+            padding: 25px 30px;
+
+            &::before {
+                @indent: -2px;
+                content: '';
+                display: block;
+                top: @indent;
+                left: @indent;
+                right: @indent;
+                bottom: @indent;
+                position: absolute;
+                border: 5px solid @bronze;
+            }
+
+            &::after {
+                @indent: 18px;
+                content: '';
+                display: block;
+                top: @indent;
+                left: @indent;
+                right: @indent;
+                bottom: @indent;
+                position: absolute;
+                border: 1px dashed @bronze;
+                pointer-events: none;//set element does not react to pointer events, can target elements is "underneath" that element
+            }
+
+            .prices-item {
+                position: relative;
+
+                /**
+                 * price list sections divider realization:
+                 * vertical divider for desktops and large desktops
+                 * horizontal divider for mobiles and tablets
+                 */
+                &::before {
+                    content: '';
+                    display: block;
+                    right: -15px;
+                    left: auto;
+                    top: 0;
+                    bottom: 0;
+                    position: absolute;
+                    border: 1px solid transparent;
+                    border-right: 1px solid @bronze;
+                    @media ( max-width: @tablet-point ) {
+                        right: 0;
+                        left: 0;
+                        top: auto;
+                        bottom: -15px;
+                        border: 1px solid transparent;
+                        border-bottom: 1px solid @bronze;
+                    }
+                }
+
+                /**
+                 * prices display option with dotted list
+                 */
+                .dotted {
+                    margin-bottom: 5px;
+                    border-bottom: 2px @black-amber dotted;
+
+                    .service {
+                        background-color: @white; // add background equal parent's background color to hide border in necessary place
+                        position: relative;
+                        margin: 0;
+
+                        &-name {
+                            bottom: -20px;
+                            padding-right: 3px;
+                            display: inline-block;
+                            max-width: 70%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis; // hide long content in tablet devices
+                        }
+
+                        &-price {
+                            float: right;
+                            font-size: 20px;
+                            bottom: -15px;
+                            padding-left: 3px;
+                        }
+                    }
+                }
+            }
+
+            // price list's last section haven't divider
+            .last {
+                .prices-item::before {
+                    border: 1px solid transparent;
+                }
+            }
+        }
+    }
+}

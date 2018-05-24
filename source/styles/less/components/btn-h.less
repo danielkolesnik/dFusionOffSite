@@ -1,0 +1,60 @@
+* {
+    // local variables
+    @btn-light:        @khaki;
+    @btn-light-hover:  @bronze;
+    @btn-dark:         @black-amber;
+    @btn-dark-hover:   @black-amber-dark;
+
+    /*
+     * Example of using btn-h
+     *
+     * template example
+     * <button type="button" class="btn btn-h btn-light">Submit</button>
+     *
+     * <button type="button" class="btn btn-h btn-dark">Submit</button>
+     */
+
+    .btn { // using class btn to grows up the selector weight
+
+        &.btn-h {
+            color: @white;
+            padding: 14px 30px;
+            font-family: @font-family-montserrat;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 100px;
+
+            &.btn-light {
+                background-color: @btn-light;
+
+                &:hover {
+                    background-color: @btn-light-hover;
+
+                }
+                &:active, &.active {
+                    background-color: @bronze;
+                }
+                &:focus {
+                    outline: none;
+
+                }
+            }
+
+            &.btn-dark {
+                background-color: @btn-dark;
+
+                &:hover {
+                    background-color: @btn-dark-hover;
+                }
+                &:active, &.active {
+                    background-color: @black-amber-dark;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}

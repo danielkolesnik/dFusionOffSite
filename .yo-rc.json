@@ -1,0 +1,16 @@
+{
+  "generator-angular-dft": {
+    "user": "sajera",
+    "appName": "hairdresser",
+    "appVersion": "0.0.1",
+    "cssFramework": null,
+    "modules": {
+      "root": "happ"
+    },
+    "instalation": "complete",
+    "preprocessors": {
+      "css": "less",
+      "js": null
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.navbar-h {//custom navigation decorator
+    margin: 0;
+    background-color: @white;
+    border-bottom: @header-border-height solid #eae7e2;
+
+    /**
+    *
+    * set navigation indents depending on the screen size
+    *
+    */
+    @media (max-width: @tablet-point) {
+        padding: @header-sm-padding 0;
+    }
+    @media (min-width: @tablet-point) {
+        padding: @header-lg-padding 0;
+    }
+
+    .navbar-brand {//bootstrap template class
+        padding: 0 15px;
+    }
+
+    .navbar-toggle {//bootstrap template class
+        border-color: @black-amber-dark;
+        background-color: @khaki;
+        &:hover,
+        &:focus {
+            background-color: @bronze;
+        }
+        .icon-bar {
+            background-color: @black-amber-dark;
+        }
+    }
+
+    .navbar-nav {//bootstrap template class
+        > li > a {
+            font-family: @font-family-montserrat;
+            font-weight: @font-weight-regular;
+            font-size: 13px;
+            color: @black-amber-dark;
+            transition: all 0.3s;
+
+            &:hover,
+            &:focus {
+                color: @white;
+                background-color: @khaki;
+            }
+        }
+
+        > .active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: @white;
+                background-color: @bronze;
+            }
+        }
+
+        > .disabled > a {
+            &,
+            &:hover,
+            &:focus {
+                color: @white;
+                background-color: @bronze;
+            }
+        }
+    }
+
+    .navbar-right {//bootstrap template class
+        @media (min-width: 768px) {
+            margin-right: 0; // for correct navigation's buttons align
+        }
+    }
+}
+
+/**
+*
+* find top indent for main section to avoid overlay by header
+*
+*/
+#header + #main {
+    @media (max-width: @tablet-point) {
+        padding-top: (@base-header-height + (@header-sm-padding*2) + @header-border-height);
+    }
+    @media (min-width: @tablet-point) {
+        padding-top: (@base-header-height + (@header-lg-padding*2) + @header-border-height);
+    }
+}
