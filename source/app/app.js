@@ -35,5 +35,5 @@ angular
         // Do I need to state parameters visible in the html view ?
         $rootScope.$state = $state;
         // log a configuration of aplication
-        $log.debug('app config\n', config);
+        console.log('app config\n', config);
     });
