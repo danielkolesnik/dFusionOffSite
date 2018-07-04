@@ -5,7 +5,7 @@
 @mobile-point:      480px;
 
 // FONTS
-@font-family-sans-serif:  Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-montserrat:  Montserrat, @font-family-sans-serif;
@@ -27,13 +27,13 @@
 @font-size-h7:       14px; // 13
 @font-size-h8:       12px;
 
-@font-size-regular:  16px;
-@font-size-light:    12px;
+@font-size-regular:  12px; // 16
+@font-size-light:    10px; // 12
 
-@font-family-base:  "Roboto", @font-family-sans-serif;
+@font-family-base:  @font-family-sans-serif;
 @font-size-base:    @font-size-regular;
 @font-weight-base:  @font-weight-light;
-@line-height-base:  1.75; // 28/16
+@line-height-base:  1.42857143; // 28/16
 
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
@@ -79,6 +79,10 @@
 @dark-purple:       #7A3DCE;
 @brown:             #292929;
 
+// dFusion tech Colors
+@malachite:         #94ba37;    // for hover
+@default-black:     #10161c;    // default text color
+
 // style guide color
 @beige:             #f4f1ec;
 @khaki:             #aa9144;
@@ -103,7 +107,7 @@
 @zindex-modal:             1050;
 
 // HEADER
-@base-header-height: 50px; //navbar-header content height
-@header-lg-padding: 20px; //desktop and large desktop devices
-@header-sm-padding: 10px; //tablet and mobile devices
+@base-header-height: 51px; //navbar-header content height 50
+@header-lg-padding: 12px; //desktop and large desktop devices 20
+@header-sm-padding: 12px; //tablet and mobile devices
 @header-border-height: 1px;
