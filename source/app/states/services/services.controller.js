@@ -3,9 +3,9 @@
 
 angular
 
-    .module('layout.other')
+    .module('layout.services')
 
-    .controller('otherController', function ( $scope, tabs ) {
+    .controller('servicesController', function ( $scope, tabs ) {
 
         // NOTE "vm" means a "visual model" the data which will use by view rendering
         var vm = $scope.vm = {

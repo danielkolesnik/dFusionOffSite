@@ -36,23 +36,75 @@
             </button>
             <nav id="navbar" class="navigation navbar-collapse collapse" aria-expanded="false" aria-controls="navbar">
                 <ul>
-                    <li id="liHomeLink" class="active has-children">
-                        <a href="#" title="Home"><span data-hover="Home">Home</span></a>
+                    <li id="liHomeLink" class="active has-children" data-ui-sref-active="active">
+                        <a  title="Home"
+                            data-toggle="collapse"
+                            data-target="#mainNav.in"
+                            data-ui-sref="layout.home"
+                                >
+                            <span data-hover="Home">
+                                Home
+                            </span>
+                        </a>
                     </li>
-                    <li id="liServicesLink" class="has-children">
-                        <a href="#" title="Services"><span data-hover="Services">Services</span></a>
+                    <li id="liServicesLink" class="has-children" data-ui-sref-active="active">
+                        <a  title="Services"
+                            data-toggle="collapse"
+                            data-target="#mainNav.in"
+                            data-ui-sref="layout.services"
+                                >
+                            <span data-hover="Services">
+                                Services
+                            </span>
+                        </a>
                     </li>
                     <li id="liPortfolioLink" class="has-children">
-                        <a href="#" title="Portfolio"><span data-hover="Portfolio">Portfolio</span></a>
+                        <a  title="Portfolio"
+                            data-toggle="collapse"
+                            data-target="#mainNav.in"
+                            href="javascript:void(0)"
+                            data-ng-click="root.sayNo();"
+                                >
+                            <span data-hover="Portfolio">
+                                Portfolio
+                            </span>
+                        </a>
                     </li>
                     <li id="liAboutLink" class="has-children">
-                        <a href="#" title="About"><span data-hover="About">About</span></a>
+                        <a  title="About"
+                            data-toggle="collapse"
+                            data-target="#mainNav.in"
+                            href="javascript:void(0)"
+                            data-ng-click="root.sayNo();"
+                                >
+                            <span data-hover="About">
+                                About
+                            </span>
+                        </a>
                     </li>
                     <li id="liContactsLink" class="has-children">
-                        <a href="#" title="Contacts"><span data-hover="Contacts">Contacts</span></a>
+                        <a  title="Contacts"
+                            data-toggle="collapse"
+                            data-target="#mainNav.in"
+                            href="javascript:void(0)"
+                            data-ng-click="root.sayNo();"
+                                >
+                            <span data-hover="Contacts">
+                                Contacts
+                            </span>
+                        </a>
                     </li>
                     <li id="liBlogLink" class="has-children">
-                        <a href="#" title="Blog"><span data-hover="Blog">Blog</span></a>
+                        <a  title="Blog"
+                            data-toggle="collapse"
+                            data-target="#mainNav.in"
+                            href="javascript:void(0)"
+                            data-ng-click="root.sayNo();"
+                                >
+                            <span data-hover="Blog">
+                                Blog
+                            </span>
+                        </a>
                     </li>
                 </ul>
             </nav>
