@@ -1,46 +1,155 @@
+
 #footer {
-    background: @footer-background;
-    padding: 30px 0;
     /**
      *
      * local variables
      *
      */
-    @footer-background:                #1e1c18;
-    @footer-content-background:        #282725;
-    @widget-background:                #393836;
-    @widget-text-color:                #eee;
-    @footer-text-color:                @grey-shade-12;
-    @mobile-point-xs:                  320px;
-    .footer-content-holder {
-        background: @footer-content-background;
-        border-radius: 10px;
-        padding: 20px 40px;
-        .footer-text-grey {
-            color: @footer-text-color;
-        }
+    @footer-background:                 #1b2229;
+    @copyright-block-background:        #101821;
+    @footer-text-color:                 @white;
+    @copyright-block-text-color:        #a6a8a9;
+
+    background-color: @footer-background;
+    color: @footer-text-color;
+    line-height: 1.9em;
+    margin-top: 70px;
+
+    & > .container {
+        padding-top: 69px;
+        padding-bottom: 62px;
     }
 
-    .widget {
-        max-width: 450px;
-        margin-right: auto;
-        margin-left: auto;
-        .widget-newsletter {
-            height: 48px;
-            color: @widget-text-color;
-            background-color: @widget-background;
-            border: none;
-            border-radius: 30px 0px 0px 30px;
-        }
-        /**
-         *
-         * use media for better widget view on small devices ( resizing button )
-         *
-         */
-        .btn-h {
-            @media (max-width: @tablet-point) and (min-width: @mobile-point-xs) {
-                padding: 14px;
+    .row {
+        & > div > ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            &.social {
+                margin-top: 40px;
+                font-size: 18px;
             }
         }
     }
+
+    a {
+        color: #ffffff;
+        text-decoration: none;
+        -moz-transition: color 0.3s;
+        -webkit-transition: color 0.3s;
+        -o-transition: color 0.3s;
+        transition: color 0.3s;
+
+        &:hover, &:focus {
+            color: @malachite;
+        }
+    }
+
+    .footer-widget-title {
+        font-size: 17px;
+        margin-top: -6px;
+        margin-bottom: 38px;
+        text-transform: uppercase;
+    }
+
+    .recent-posts {
+        li {
+            & + li {
+                margin-top: 9px;
+            }
+        }
+    }
+
+    .footer-navigation {
+        margin: 0;
+        padding: 0;
+
+        a {
+            display: block;
+        }
+
+        li + li {
+            margin-top: 9px;
+        }
+    }
+
+    .tag-cloud {
+        margin: -1px;
+
+        a {
+            background-color: #2f3133;
+            color: #fff;
+            float: left;
+            margin: 1px;
+            padding: 5px 15px;
+            -moz-transition: background-color 0.3s, color 0.3s;
+            -webkit-transition: background-color 0.3s, color 0.3s;
+            -o-transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
+
+            &:hover {
+                background-color: #94ba37;
+                color: #1d242c;
+            }
+        }
+    }
+
+    .copyright-block {
+        text-align: center;
+        background-color: @copyright-block-background;
+        color: @copyright-block-text-color;
+
+        & > .container {
+            padding-top: 22px;
+            padding-bottom: 22px;
+        }
+    }
 }
+
+//#footer {
+//    background: @footer-background;
+//    padding: 30px 0;
+//    /**
+//     *
+//     * local variables
+//     *
+//     */
+//    @footer-background:                #1e1c18;
+//    @footer-content-background:        #282725;
+//    @widget-background:                #393836;
+//    @widget-text-color:                #eee;
+//    @footer-text-color:                @grey-shade-12;
+//    @mobile-point-xs:                  320px;
+//    .footer-content-holder {
+//        background: @footer-content-background;
+//        border-radius: 10px;
+//        padding: 20px 40px;
+//        .footer-text-grey {
+//            color: @footer-text-color;
+//        }
+//    }
+//
+//    .widget {
+//        max-width: 450px;
+//        margin-right: auto;
+//        margin-left: auto;
+//        .widget-newsletter {
+//            height: 48px;
+//            color: @widget-text-color;
+//            background-color: @widget-background;
+//            border: none;
+//            border-radius: 30px 0px 0px 30px;
+//        }
+//        /**
+//         *
+//         * use media for better widget view on small devices ( resizing button )
+//         *
+//         */
+//        .btn-h {
+//            @media (max-width: @tablet-point) and (min-width: @mobile-point-xs) {
+//                padding: 14px;
+//            }
+//        }
+//    }
+//}

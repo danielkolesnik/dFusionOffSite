@@ -1,89 +1,108 @@
 <footer id="footer">
     <div class="container">
-        <!-- has addition style sheets for nice view by design -->
         <div class="footer-content-holder">
             <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-4 offset-bottom-4">
-                    <h4 class="offset-bottom-4 text-white text-uppercase">Контактная информация</h4>
-                    <ul class="list-unstyled footer-text-grey">
-                        <li class="offset-bottom-2">
-                            <i class="fa fa-map-marker offset-right-2"></i>
-                            {{ vm.address }}
+                <div class="col-sm-3">
+                    <h3 class="footer-widget-title">We can Do</h3>
+                    <ul class="">
+                        <li>Work hard on researching, design and development to deliver high-quality software to maximize your business value.</li>
+                    </ul>
+                    <ul class="social list-inline">
+                        <li><a href="https://plus.google.com/u/0/105442397438748323874" class="fa fa-google-plus"></a></li>
+                        <li><a href="https://www.linkedin.com/company/dfusion-tech" target="_blank" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h3 class="footer-widget-title">Recent posts</h3>
+                    <ul class="recent-posts">
+                        <li>
+                            <span>March, 2014 / </span>
+                            <a href="javascript:void(0)">
+                                We are Adobe certified experts for CQ5 component development.
+                            </a>
                         </li>
-                        <li class="offset-bottom-2" data-ng-repeat="phone in vm.phones">
-                            <i class="fa fa-phone offset-right-2"></i>
-                            {{ phone.name }}: {{ phone.value }}
-                        </li>
-                        <li class="offset-bottom-2" data-ng-repeat="mail in vm.mailtoLinks">
-                            <a
-                                data-ng-href="{{ mail.linkValue }}"
-                                class="social-link-h"
-                                    >
-                                <i class="fa fa-envelope-o offset-right-2"></i>
-                                {{ mail.name }}: {{ mail.value }}
+                        <li>
+                            <span>August, 2014 / </span>
+                            <a href="javascript:void(0)">
+                                Our new product for web-based full-scale comparison of business documents' revisions was released.
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-sm-6 col-md-3 col-lg-3 offset-bottom-4">
-                    <h4 class="offset-bottom-4 text-white text-uppercase">
-                        Социальные сети
-                    </h4>
-                    <ul class="list-unstyled footer-text-grey">
-                        <li
-                            class="offset-bottom-2"
-                            data-ng-repeat="social in vm.socials"
-                            data-ng-if="social.link"
-                                >
-                            <a data-ng-href="{{ social.link }}" class="social-link-h">
-                                <i class="fa offset-right-2" data-ng-class="social.icon"></i>
-                                {{ social.name }}
+                <div class="col-sm-3">
+                    <h3 class="footer-widget-title">Navigation</h3>
+                    <ul class="footer-navigation">
+                        <li data-ui-sref-active="active">
+                            <a  title="Home"
+                                data-toggle="collapse"
+                                data-target="#mainNav.in"
+                                data-ui-sref="layout.home"
+                                    >
+                                Home
+                            </a>
+                        </li>
+                        <li data-ui-sref-active="active">
+                            <a  title="Services"
+                                data-toggle="collapse"
+                                data-target="#mainNav.in"
+                                data-ui-sref="layout.services"
+                                    >
+                                Services
+                            </a>
+                        </li>
+                        <li>
+                            <a  title="Portfolio"
+                                data-toggle="collapse"
+                                data-target="#mainNav.in"
+                                href="javascript:void(0)"
+                                data-ng-click="vm.sayNo();"
+                                    >
+                                Portfolio
+                            </a>
+                        </li>
+                        <li>
+                            <a  title="About"
+                                data-toggle="collapse"
+                                data-target="#mainNav.in"
+                                href="javascript:void(0)"
+                                data-ng-click="vm.sayNo();"
+                                    >
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a  title="Contacts"
+                                data-toggle="collapse"
+                                data-target="#mainNav.in"
+                                href="javascript:void(0)"
+                                data-ng-click="vm.sayNo();"
+                                    >
+                                Contacts
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-sm-12 col-md-5 col-lg-5 offset-bottom-4">
-                    <!-- Form for sending email -->
-                    <form name="sendEmail">
-                        <h4 class="offset-bottom-4 text-white text-uppercase">
-                            Подписаться
-                        </h4>
-                        <p class="offset-bottom-4 footer-text-grey">
-                            Укажите свой email, чтобы получать последние новости.
-                        </p>
-                        <div class="input-group widget">
-                            <input
-                                name="email"
-                                title="Subscribe"
-                                type="email"
-                                class="form-control widget-newsletter"
-                                placeholder="Email"
-                                required
-                                    >
-                            <div class="input-group-btn">
-                                <!--disable button because it doesn't work with server at that moment-->
-                                <button
-                                    data-ng-disabled="true"
-                                    title="Subscribe"
-                                    type="submit"
-                                    class="btn btn-h btn-light text-uppercase"
-                                        >
-                                    Подписаться
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                <div class="col-sm-3">
+                    <h3 class="footer-widget-title">Tags</h3>
+                    <div class="tag-cloud">
+                        <a href="javascript:void(0);">agreements</a>
+                        <a href="javascript:void(0);">developers</a>
+                        <a href="javascript:void(0);">relationship</a>
+                        <a href="javascript:void(0);">development</a>
+                        <a href="javascript:void(0);">software</a>
+                        <a href="javascript:void(0);">projects</a>
+                        <a href="javascript:void(0);">experience </a>
+                        <a href="javascript:void(0);">efficiency</a>
+                        <a href="javascript:void(0);">responsibility</a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="copyright-block">
+        <div class="container">
             <div class="row">
-                <div class="col-xs-12">
-                    <p class="text-center footer-text-grey">
-                        &copy;
-                        JS_02_18
-                        2018-{{ vm.nextYear }}
-                        | Все права защищены
-                    </p>
-                </div>
+                Copyright © 2008-2018 dFusion Tech, Inc.
             </div>
         </div>
     </div>
