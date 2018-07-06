@@ -15,6 +15,8 @@ angular
         'restangular',
         'ui.bootstrap',
         'angularMoment',
+
+        'ngAnimate',
     ])
 
     .config( function ( $urlRouterProvider, $logProvider, $locationProvider, RestangularProvider, config ) {

@@ -24,11 +24,153 @@
     }
 
     .content {
+
+        .circle-check-list {
+            li:before {
+                content: "\f058";
+                font-family: FontAwesome;
+                margin-right: 10px;
+                position: relative;
+                top: -1px;
+                color: #94ba37;
+            }
+        }
+
+        .list {
+            list-style: none;
+            /* margin: 0; */
+            padding-left: 0;
+            margin: 15px 0 0 20px;
+
+            li + li {
+                margin-top: 12px;
+            }
+        }
+
+        // maybe it should be moved into global file(like in the components)
+        .nav-tabs {
+            border-color: #ececec;
+            border-right: 1px solid #ddd;
+            border-bottom: none;
+            margin-bottom: 40px;
+            padding: 1px 0;
+            text-align: right;
+            width: 31%;
+            float: left;
+
+            li {
+                position: relative;
+                width: 100%;
+                margin: -1px 0;
+                border-top: 1px solid #ddd;
+
+                &:first-child {
+                    border-top: none;
+                }
+                &.active {
+
+                    a, a:hover, a:focus {
+                        color: #555;
+                        cursor: default;
+                        background-color: #fff;
+
+                    }
+                    &:first-child {
+                        margin-top: -2px;
+                        border-top: 1px solid #ddd;
+                    }
+
+                    &:last-child {
+                        border-bottom: 1px solid #ddd;
+
+                        &:after {
+                            bottom: -1px;
+                        }
+
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 1px;
+                        left: -1px;
+                        top: -1px;
+                        right: auto;
+                        width: 9px;
+                        height: auto;
+                        z-index: 3;
+                        background-color: @malachite;
+                    }
+
+                }
+
+                a {
+                    border: none !important;
+                    border-radius: 0;
+                    font-size: 14px;
+                    padding: 13px 24px 13px 15px;
+                    color: #292929;
+                    cursor: pointer;
+
+                    &:focus {
+                        text-decoration: none;
+                        background-color: #eee;
+                        color: @malachite;
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                        color: @malachite;
+                        background: none;
+                    }
+                }
+
+                &.active {
+                }
+            }
+
+            .ng-isolate-scope {
+            }
+        }
+
+        .tab-content {
+            width: 66%;
+            float: left;
+
+            .row {
+                margin: 0 0 0 15px;
+                padding: 0;
+            }
+            h3 {
+                margin-top: 0;
+                margin-left: 30px;
+                line-height: 1.1;
+                font-size: 24px;
+            }
+        }
+
         p {
             color: #727272;
             line-height: 1.7em;
             margin: 0 0 9px;
         }
+
+        .heading {
+            margin-bottom: 23px;
+            margin-top: 0px;
+            position: relative;
+            text-align: center;
+            font-size: 17px;
+
+            span.title {
+                color: #10161c;
+                text-transform: uppercase;
+                border-bottom: 1px solid rgba(209, 215, 194, 1);
+                display: inline-block;
+                padding: 0 58px 20px;
+            }
+        }
+
         .sidebar {
             .sidebar-widget {
                 .widget-title {
@@ -58,6 +200,7 @@
 
                 form {
                     margin-bottom: 15px;
+                    text-align: right;
 
                     .form-control:focus {
                         border-color: @malachite;
@@ -65,9 +208,18 @@
                         box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(164, 228, 77, 0.6);
                     }
 
-                    .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+                    .btn:focus, .btn.focus{
                         outline: 5px auto #A4E44D;
                         outline-offset: -2px;
+                    }
+
+                    .btn:hover {
+                        outline: 5px auto #A4E44D;
+                        outline-offset: -2px;
+                    }
+
+                    .btn.btn-default {
+                        background: white;
                     }
 
                     textarea {
@@ -77,9 +229,57 @@
                         min-width: 255px;
                         width: 265px;
                     }
+
                 }
             }
         }
     }
 
+    .partners-panel {
+        margin-top: 70px;
+
+        .logos {
+            border: 1px solid #e5e5e5;
+            border-style: solid none;
+            display: table;
+            max-width: 910px;
+            margin: 10px auto;
+            padding: 25px 0;
+            list-style: none;
+
+            li {
+                width: 20%;
+                display: table-cell;
+                list-style: none;
+                padding: 0 20px;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            a {
+                -webkit-backface-visibility: hidden;
+                display: block;
+                position: relative;
+
+                &:hover {
+                    .hover {
+                        opacity: 1;
+                        filter: alpha(opacity=100);
+                    }
+                }
+            }
+
+            .hover {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                text-align: center;
+                opacity: 0;
+                filter: alpha(opacity=0);
+                -webkit-transition: 0.2s opacity;
+                transition: 0.2s opacity;
+                width: 100%;
+            }
+        }
+    }
 }
