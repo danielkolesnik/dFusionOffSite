@@ -15,7 +15,7 @@ angular
         'restangular',
         'ui.bootstrap',
         'angularMoment',
-
+        'ngTouch',
         'ngAnimate',
     ])
 
