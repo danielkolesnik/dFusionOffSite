@@ -1,29 +1,11 @@
 
 #servicesPage {
-    .page-heading {
-        background: transparent url(../../../assets/images/slider-subheader.jpg);
-        background-size: cover;
-        height: 100px;
-        min-height: 100px;
-        -webkit-box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.045);
-        box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.045);
-        font-size: 14px;
-        margin-top: -1px;
-        margin-bottom: 47px;
-        padding: 38px 0 33px 0;
-
-        h1 {
-            color: #ffffff;
-            font-size: 24px;
-            float: left;
-            margin: 0;
-            text-transform: none;
-        }
-
-
-    }
 
     .content {
+
+        .heading {
+            margin-top: 0;
+        }
 
         .circle-check-list {
             li:before {
@@ -47,7 +29,6 @@
             }
         }
 
-        // maybe it should be moved into global file(like in the components)
         .nav-tabs {
             border-color: #ececec;
             border-right: 1px solid #ddd;
@@ -127,15 +108,36 @@
 
                 &.active {
                 }
+
+
             }
 
-            .ng-isolate-scope {
+            @media @mdscreen {
+                float: none;
+                width: 95%;
+                text-align: left;
+                margin: 0 auto 40px;
+                li {
+                    border-left: 1px solid #ddd;
+
+                    &:first-child {
+                        margin-top: -2px;
+                        border-top: 1px solid #ddd;
+                    }
+
+                    &:last-child {
+                        border-bottom: 1px solid #ddd;
+                    }
+
+                }
             }
         }
 
         .tab-content {
             width: 66%;
             float: left;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
 
             .row {
                 margin: 0 0 0 15px;
@@ -147,6 +149,20 @@
                 line-height: 1.1;
                 font-size: 24px;
             }
+
+            @media @mdscreen {
+                width: 100%;
+                float: none;
+
+                .row {
+                    margin: 0 0 0 0px;
+                    padding: 0;
+                }
+
+                h3 {
+
+                }
+            }
         }
 
         p {
@@ -155,23 +171,10 @@
             margin: 0 0 9px;
         }
 
-        .heading {
-            margin-bottom: 23px;
-            margin-top: 0px;
-            position: relative;
-            text-align: center;
-            font-size: 17px;
 
-            span.title {
-                color: #10161c;
-                text-transform: uppercase;
-                border-bottom: 1px solid rgba(209, 215, 194, 1);
-                display: inline-block;
-                padding: 0 58px 20px;
-            }
-        }
 
         .sidebar {
+
             .sidebar-widget {
                 .widget-title {
                     font-size: 18px;
@@ -179,7 +182,7 @@
                     text-transform: uppercase;
                 }
 
-                &:first-child .widget-title {
+                .widget-title {
                     margin-top: 0px;
                 }
 

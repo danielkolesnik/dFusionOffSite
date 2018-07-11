@@ -3,7 +3,7 @@
         <div class="row page-heading">
             <img src="assets/images/home-heading-bg.jpg" alt="">
             <div class="page-heading-overlay"></div>
-            <h1 class="bold uppercase animated fadeInRight">
+            <h1 class="animated fadeInRight">
                 It doesn't matter where you start
                 <br>
                 try <span class="">us</span>
@@ -60,14 +60,44 @@
             <div class="testimonials-carousel">
                 <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                     <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-                        <img ng-src="{{slide.image}}" style="margin:auto;">
-                        <div class="carousel-caption">
-                            <h4>Slide {{slide.id}}</h4>
-                            <p>{{slide.text}}</p>
+                        <span class="quote-symbol"></span>
+                        <div class="slide-caption">
+                            <p class="testim-text">{{slide.text}}</p>
+                            <strong class="testim-author">- {{slide.author}}</strong>
+                            <br>
+                            <strong class="testim-author">{{slide.post}}</strong>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <section class="partners-panel">
+        <ul class="logos">
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/affinity-media-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/affinity-media-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/travelmenu-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/travelmenu-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/tangrapth-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/tangrapth-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/flexisus-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/flexisus-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+        </ul>
     </section>
 </div>

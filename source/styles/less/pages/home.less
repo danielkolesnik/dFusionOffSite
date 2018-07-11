@@ -5,6 +5,8 @@
     .page-heading {
         position: relative;
         height: auto;
+        margin: 0;
+        padding: 0;
 
         img {
             position: relative;
@@ -30,8 +32,9 @@
             left: 15%;
             color: white;
             font-size: 4vw;
-            //font-size: 60px;
+            font-weight: bold;
             line-height: 5vw;
+            text-transform: uppercase;
 
             @media @lsmscreen {
                 line-height: 5vw;
@@ -84,10 +87,14 @@
     }
 
     .testimonials-block {
+
+        @media (max-width: 360px) {
+            margin: 0 -15px;
+        }
+
         .heading {
             font-size: 17px;
             color: black;
-            margin-bottom: 40px;
 
             span {
                 border-bottom: 1px solid rgba(209, 215, 194, 1);
@@ -97,9 +104,112 @@
         }
 
         .testimonials-carousel {
+            //height: 200px;
 
+            .carousel-inner {
+                width: 80%;
+                margin-left: 10%;
+            }
+
+            .item {
+
+                .text-center {
+                    height: 200px;
+                    width: 90%;
+                    padding-top: 5%;
+                    margin: auto;
+
+                    @media @mdscreen {
+                        height: 300px;
+                    }
+
+                    @media @lsmscreen {
+                        height: 500px;
+                        padding-top: 0;
+                    }
+                    @media (max-width: 360px) {
+                        height: 520px;
+                    }
+
+                    .quote-symbol {
+                        content: ' ';
+                        float: left;
+                        background-position: 0 0;
+                        background-repeat: no-repeat;
+                        background-image: url(../../../assets/images/svg/quote_testimonials.svg);
+                        text-indent: -9999px;
+                        background-size: 100%;
+                        width: 70px;
+                        height: 40px;
+                        margin: 5px 10px;
+
+                        @media @lsmscreen {
+                            width: 45px;
+                            height: 25px;
+                            margin: 5px 5px 0 0;
+                        }
+                    }
+
+                    .slide-caption {
+                        color: black;
+                        text-align: left;
+
+                        margin-left: 100px;
+
+                        @media @lsmscreen {
+                            margin-left: 55px;
+                        }
+
+                        .image-imitation {
+                            display: inline-block;
+                        }
+
+                        .testim-text {
+                            font-style: normal;
+                            font: 13px/1.7em Arial;
+                            margin-bottom: 15px;
+                        }
+
+                        .testim-author {
+                            font: 12px Arial;
+                            text-transform: uppercase;
+                            line-height: normal;
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+
+            .carousel-control {
+                width: 10%;
+                background: none;
+                color: #d1d7c2;
+
+                @media @lsmscreen {
+                    &.right {
+                        background: @malachite; /* Old browsers */
+                        background: -moz-linear-gradient(left, rgba(148,186,55,0) 0%, rgba(148,186,55,0.5) 100%); /* FF3.6-15 */
+                        background: -webkit-linear-gradient(left, rgba(148,186,55,0) 0%,rgba(148,186,55,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+                        background: linear-gradient(to right, rgba(148,186,55,0) 0%,rgba(148,186,55,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94BA37', endColorstr='#94BA37',GradientType=1 ); /* IE6-9 */
+                    }
+                    &.left {
+                        background: @malachite; /* Old browsers */
+                        background: -moz-linear-gradient(left, rgba(148,186,55,0.5) 0%, rgba(148,186,55,0) 100%); /* FF3.6-15 */
+                        background: -webkit-linear-gradient(left, rgba(148,186,55,0.5) 0%,rgba(148,186,55,0) 100%); /* Chrome10-25,Safari5.1-6 */
+                        background: linear-gradient(to right, rgba(148,186,55,0.5) 0%,rgba(148,186,55,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94BA37', endColorstr='#94BA37',GradientType=1 ); /* IE6-9 */
+                    }
+                }
+            }
+
+            .carousel-indicators {
+                display: none;
+            }
         }
     }
+
+
 }
 
 

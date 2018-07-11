@@ -1,0 +1,72 @@
+#aboutPage {
+    .heading {
+        margin-bottom: 40px;
+    }
+    .advantages-block {
+        padding: 0 15px;
+
+        @media @lsmscreen {
+            text-align: center;
+            .col-sm-4 {
+                margin: 0 0 20px;
+            }
+        }
+
+        .row.fadeInRight {
+            margin-top: 45px;
+        }
+        .adv-logo {
+            display: block;
+            text-decoration: none;
+            position: relative;
+
+            .adv-icon {
+                width: 15%;
+                position: relative;
+                bottom: 10px;
+                font-size: 29px;
+                background: none;
+                height: auto;
+                padding: 0;
+                color: @malachite;
+                text-align: center;
+            }
+
+            .adv-name {
+                width: 84%;
+                display: inline-block;
+
+
+                h2 {
+                    padding-top: 0;
+                    text-transform: uppercase;
+                    font-size: 17px;
+                    margin: 0;
+                    color: @default-black;
+                }
+
+                h3 {
+                    font-size: 14px;
+                    margin-top: 6px;
+                    text-transform: none;
+                    color: @light-grey;
+                }
+            }
+
+            &:hover {
+                .adv-icon {
+                    color: @default-black;
+                }
+
+                .adv-name h2 {
+                    color: @malachite;
+                }
+            }
+        }
+
+        .adv-description {
+            margin-top: 7px;
+        }
+
+    }
+}
