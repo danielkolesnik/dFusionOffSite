@@ -10,7 +10,8 @@ angular
         'layout.home',
         'layout.other',
         'layout.services',
-        'layout.about'
+        'layout.about',
+        'layout.portfolio'
     ])
 
     .config( function ( $stateProvider ) {

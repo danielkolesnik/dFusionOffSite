@@ -1,0 +1,61 @@
+<div id="portfolioPage">
+    <section class="page-heading">
+        <div class="container">
+            <h1>Portfolio</h1>
+        </div>
+    </section>
+
+    <section class="content container">
+        <h2 class="animated fadeInDown heading">
+            <span class="title"> What we have done </span>
+        </h2>
+        <h3 class="animated fadeInDown heading">
+            <span class="subtitle"> Here is some of our recent work. We thank all our outstanding clients who we had a great pleasure to work with. </span>
+        </h3>
+
+        <section class="row">
+            <!--<span data-ng-repeat="project in vm.prj">{{project.name}}</span>-->
+            <div class="project" data-ng-repeat="project in vm.prj">
+                <div class="col-md-6">
+                    <div class="display">
+                        <img src="{{project.platforms[0].frame}}" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="name">{{project.name}}</h4>
+                    <p class="description">{{project.description}}</p>
+                    <p><i>{{project.technologies}}</i></p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="partners-panel">
+        <ul class="logos">
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/affinity-media-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/affinity-media-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/travelmenu-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/travelmenu-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/tangrapth-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/tangrapth-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/flexisus-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/flexisus-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+        </ul>
+    </section>
+</div>

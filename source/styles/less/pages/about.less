@@ -2,6 +2,7 @@
     .heading {
         margin-bottom: 40px;
     }
+
     .advantages-block {
         padding: 0 15px;
 
@@ -68,5 +69,61 @@
             margin-top: 7px;
         }
 
+    }
+
+    .team {
+        padding: 0 15px;
+        margin-bottom: 45px;
+
+        .teammate {
+            position: relative;
+            margin-bottom: -50px;
+
+            .teammate-picture {
+                //display: inline-block;
+                float: left;
+
+                img {
+                    border: 3px solid #e5e5e5;
+                    border-radius: 4px;
+                }
+            }
+
+            .about {
+                display: inline-block;
+                margin-left: 123px;
+                position: relative;
+                bottom: 106px;
+
+                .name-and-post {
+                    color: #10161c;
+                    margin: 0;
+                    margin-bottom: 11px;
+                    font-size: 15px;
+                    line-height: normal;
+                }
+            }
+
+            @media (min-width: 768px) and (max-width: 992px) {
+                margin-bottom: 0;
+                .teammate-picture {
+                    text-align: center;
+                    float: none;
+                    display: block;
+                }
+
+                .about {
+                    bottom: 0;
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+
+            @media (min-width: 992px) and (max-width: 1200px) {
+                .height-fix {
+                    display: none;
+                }
+            }
+        }
     }
 }

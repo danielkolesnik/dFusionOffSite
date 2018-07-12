@@ -13,7 +13,7 @@ angular
             data: null,
         };
 
-        $scope.myInterval = 0;
+        $scope.myInterval = 10000;
         $scope.noWrapSlides = false;
         $scope.active = 0;
         var slides = $scope.slides = [
@@ -64,7 +64,7 @@ angular
             .catch(function ( error ) {
                 console.error('ApiService.getData', error);
             });
-
+        slides;
     });
 
 /*
