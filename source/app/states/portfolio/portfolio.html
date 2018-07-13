@@ -13,21 +13,47 @@
             <span class="subtitle"> Here is some of our recent work. We thank all our outstanding clients who we had a great pleasure to work with. </span>
         </h3>
 
-        <section class="row">
-            <!--<span data-ng-repeat="project in vm.prj">{{project.name}}</span>-->
-            <div class="project" data-ng-repeat="project in vm.prj">
-                <div class="col-md-6">
-                    <div class="display">
-                        <img src="{{project.platforms[0].frame}}" alt="">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="name">{{project.name}}</h4>
-                    <p class="description">{{project.description}}</p>
-                    <p><i>{{project.technologies}}</i></p>
+        <!--<div>-->
+            <!--<code> {{ prj.currPlatform | json }} </code>-->
+            <!--&lt;!&ndash;<br/>&ndash;&gt;-->
+        <!--</div>-->
+
+    <section data-ng-if="vm.projects != null" class="project row" data-ng-repeat="prj in vm.projects">
+        <div data-ng-if="(prj.previewFirst)" class="col-md-6">
+            <div class="display" data-ng-if="prj.currPlatform!=null" data-ng-class="prj.currPlatform.platform">
+                <img class="template" data-ng-if="prj.currPlatform != null" data-ng-src="{{prj.currPlatform.frame}}" alt="">
+                <div class="curr-img-wrapper">
+                    <img class="curr-img fadeIn animated" data-ng-src="{{prj.currPlatform.currImg}}" alt="">
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="col-md-6">
+            <h4 class="name"><b>{{prj.name}}</b></h4>
+            <p class="description">{{prj.description}}</p>
+            <p><i>{{prj.technologies}}</i></p>
+            <div data-ng-if="prj.currPlatform!=null">
+                <ul class="platforms-tabs tabs-horizontal clearfix">
+                    <li data-ng-repeat="platform in prj.platforms" data-ng-class="{ active: prj.currPlatform == platform }" class="platform-tab">
+                        <a href="" role="button" data-ng-click="prj.currPlatform = platform">
+                            <i class="platform-icon {{platform.platformIcon}}"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <ul data-ng-if="prj.currPlatform!=null" class="row preview-imgs-holder tabs-horizontal">
+                <li class="col-xs-3" data-ng-repeat="img in prj.currPlatform.images">
+                    <img data-ng-src="{{img}}" alt="" class="preview-image" data-ng-click="prj.currPlatform.currImg = img">
+                </li>
+            </ul>
+        </div>
+        <div data-ng-if="!(prj.previewFirst)" class="col-md-6">
+            <div class="display" data-ng-if="prj.currPlatform!=null" data-ng-class="prj.currPlatform.platform">
+                <img class="template" data-ng-if="prj.currPlatform != null" data-ng-src="{{prj.currPlatform.frame}}" alt="">
+                <div class="curr-img-wrapper">
+                    <img class="curr-img" data-ng-src="{{prj.currPlatform.currImg}}" alt="">
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="partners-panel">
