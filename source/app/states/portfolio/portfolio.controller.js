@@ -4,7 +4,7 @@ angular
 
     .module('layout.portfolio')
 
-    .controller('portfolioController', function ( $scope) {
+    .controller('portfolioController', function ($scope, $timeout) {
 
         var projects = [
             {
@@ -303,9 +303,10 @@ angular
                         // currImg: images[0] / null
                     }
                 ]
-                // defaultPlatform: platforms[0] / null
+                // currPlatform: platforms[0] / null
             }
         ];
+
         (function normalizeInput(projects) {
             if(projects.length != 0) {
             //check is there are any projects?
@@ -317,13 +318,17 @@ angular
                         for(var n in projects[i].platforms) {
                             projects[i].platforms[n].currImg = ''; //will be shown on the device screen
 
-                            if(projects[i].platforms[n].images.length != 0) {
-                            //check is there are any images? and if it is -> setting the first as currImg
+                            if((projects[i].platforms[n].images.length != 0)&&(projects[i].platforms[n].frame.length!=null)) { //////////////////////////??
+                            //check is there are any images + frames? and if it is -> setting the first as currImg
                                 projects[i].platforms[n].currImg = projects[i].platforms[n].images[0];
+                            }
+                            else if(projects[i].platforms[n].frame.length==null) { //////////////////////////??
+                                projects[i].platforms[n].frame = null;
                             }
                             else {
                             //ELSE currImg = null
                                 projects[i].platforms[n].currImg = null;
+
                             }
                         }
 
@@ -345,13 +350,23 @@ angular
             projects: projects
         };
 
-        vm.changePlatform = function(curr, all, need) {
-            // var index = all.indexOf(curr);
-            // if(index < all.length) {
-            //
-            // }
-            console.log(need);
-        }
+        vm.prevImg = function prevImg(curr, clicked) {
+            var i = curr.images.indexOf(curr.currImg);
+            if(i == 0)  curr.currImg = curr.images[curr.images.length-1];
+            else {
+                curr.currImg = curr.images[i-1];
+            }
+            $timeout(function(){clicked.prev = false;}, 500);
+        };
+
+        vm.nextImg = function(curr, clicked) {
+            var i = curr.images.indexOf(curr.currImg);
+            if(i == curr.images.length-1)  curr.currImg = curr.images[0];
+            else {
+                curr.currImg = curr.images[i+1];
+            }
+            $timeout(function(){clicked.next = false;}, 500);
+        };
 
         // no-unused-vars =)
         vm;

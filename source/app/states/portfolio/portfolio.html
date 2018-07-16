@@ -17,40 +17,65 @@
             <!--<code> {{ prj.currPlatform | json }} </code>-->
             <!--&lt;!&ndash;<br/>&ndash;&gt;-->
         <!--</div>-->
+        <div class="projects-filter row">
+            <i class="fa fa-filter" aria-hidden="true"></i>
+            <a href data-ng-click="">All</a>
+            <span> / </span>
+            <a href data-ng-click="">Web</a>
+            <span> / </span>
+            <a href data-ng-click="">Mobile</a>
+        </div>
 
-    <section data-ng-if="vm.projects != null" class="project row" data-ng-repeat="prj in vm.projects">
-        <div data-ng-if="(prj.previewFirst)" class="col-md-6">
-            <div class="display" data-ng-if="prj.currPlatform!=null" data-ng-class="prj.currPlatform.platform">
-                <img class="template" data-ng-if="prj.currPlatform != null" data-ng-src="{{prj.currPlatform.frame}}" alt="">
-                <div class="curr-img-wrapper">
-                    <img class="curr-img fadeIn animated" data-ng-src="{{prj.currPlatform.currImg}}" alt="">
+        <div data-ng-if="vm.projects != null" class="project row" data-ng-repeat="prj in vm.projects">
+            <div data-ng-show="prj.previewFirst" class="col-md-6 preview-first">
+                <div class="display" data-ng-if="prj.currPlatform!=null"
+                     data-ng-class="prj.currPlatform.platform"
+                     data-ng-init="clicked.prev = false; clicked.next = false"
+                     data-ng-swipe-left="clicked.next = true; vm.nextImg(prj.currPlatform, clicked)"
+                     data-ng-swipe-right="clicked.prev = true; vm.prevImg(prj.currPlatform, clicked)">
+                    <img class="template" data-ng-if="prj.currPlatform.frame!=null" data-ng-src="{{prj.currPlatform.frame}}" alt="">
+                    <div class="curr-img-wrapper">
+                        <img class="curr-img animate-default" data-ng-repeat="image in prj.currPlatform.images" data-ng-src="{{image}}" alt="" data-ng-if="prj.currPlatform.currImg==image" data-ng-class="{animateRight: clicked.prev, animateLeft: clicked.next}">
+                    </div>
+                    <div class="arrows">
+                        <div class="prev-arrow" data-ng-click="clicked.prev = true; clicked.next = false; vm.prevImg(prj.currPlatform, clicked)"></div>
+                        <div class="next-arrow" data-ng-click="clicked.next = true; clicked.prev = false; vm.nextImg(prj.currPlatform, clicked)"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
-            <h4 class="name"><b>{{prj.name}}</b></h4>
-            <p class="description">{{prj.description}}</p>
-            <p><i>{{prj.technologies}}</i></p>
-            <div data-ng-if="prj.currPlatform!=null">
-                <ul class="platforms-tabs tabs-horizontal clearfix">
-                    <li data-ng-repeat="platform in prj.platforms" data-ng-class="{ active: prj.currPlatform == platform }" class="platform-tab">
-                        <a href="" role="button" data-ng-click="prj.currPlatform = platform">
-                            <i class="platform-icon {{platform.platformIcon}}"></i>
-                        </a>
+            <div class="col-md-6 about-project">
+                <h4 class="name"><b>{{prj.name}}</b></h4>
+                <p class="description">{{prj.description}}</p>
+                <p><i>{{prj.technologies}}</i></p>
+                <div data-ng-if="prj.currPlatform!=null">
+                    <ul class="platforms-tabs tabs-horizontal clearfix">
+                        <li data-ng-repeat="platform in prj.platforms" data-ng-class="{ active: prj.currPlatform == platform }" class="platform-tab">
+                            <a href="" role="button" data-ng-click="prj.currPlatform = platform">
+                                <i class="platform-icon {{platform.platformIcon}}"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul data-ng-if="prj.currPlatform!=null" class="row preview-imgs-holder tabs-horizontal">
+                    <li class="col-xs-3" data-ng-repeat="img in prj.currPlatform.images">
+                        <img data-ng-src="{{img}}" alt="" class="preview-image" data-ng-click="prj.currPlatform.currImg = img">
                     </li>
                 </ul>
             </div>
-            <ul data-ng-if="prj.currPlatform!=null" class="row preview-imgs-holder tabs-horizontal">
-                <li class="col-xs-3" data-ng-repeat="img in prj.currPlatform.images">
-                    <img data-ng-src="{{img}}" alt="" class="preview-image" data-ng-click="prj.currPlatform.currImg = img">
-                </li>
-            </ul>
-        </div>
-        <div data-ng-if="!(prj.previewFirst)" class="col-md-6">
-            <div class="display" data-ng-if="prj.currPlatform!=null" data-ng-class="prj.currPlatform.platform">
-                <img class="template" data-ng-if="prj.currPlatform != null" data-ng-src="{{prj.currPlatform.frame}}" alt="">
-                <div class="curr-img-wrapper">
-                    <img class="curr-img" data-ng-src="{{prj.currPlatform.currImg}}" alt="">
+            <div data-ng-show="!(prj.previewFirst)" class="col-md-6  preview-second">
+                <div class="display" data-ng-if="prj.currPlatform!=null"
+                     data-ng-class="prj.currPlatform.platform"
+                     data-ng-init="clicked.prev = false; clicked.next = false"
+                     data-ng-swipe-left="clicked.next = true; vm.nextImg(prj.currPlatform, clicked)"
+                     data-ng-swipe-right="clicked.prev = true; vm.prevImg(prj.currPlatform, clicked)">
+                    <img class="template" data-ng-if="prj.currPlatform.frame!=null" data-ng-src="{{prj.currPlatform.frame}}" alt="">
+                    <div class="curr-img-wrapper">
+                        <img class="curr-img animate-default" data-ng-repeat="image in prj.currPlatform.images" data-ng-src="{{image}}" alt="" data-ng-if="prj.currPlatform.currImg==image" data-ng-class="{animateRight: clicked.prev, animateLeft: clicked.next}">
+                    </div>
+                    <div class="arrows">
+                        <div class="prev-arrow" data-ng-click="clicked.prev = true; clicked.next = false; vm.prevImg(prj.currPlatform, clicked)"></div>
+                        <div class="next-arrow" data-ng-click="clicked.next = true; clicked.prev = false; vm.nextImg(prj.currPlatform, clicked)"></div>
+                    </div>
                 </div>
             </div>
         </div>
