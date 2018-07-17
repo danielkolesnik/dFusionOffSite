@@ -12,34 +12,54 @@
         <h3 class="animated fadeInDown heading">
             <span class="subtitle"> Here is some of our recent work. We thank all our outstanding clients who we had a great pleasure to work with. </span>
         </h3>
-
         <!--<div>-->
             <!--<code> {{ prj.currPlatform | json }} </code>-->
             <!--&lt;!&ndash;<br/>&ndash;&gt;-->
         <!--</div>-->
         <div class="projects-filter row">
             <i class="fa fa-filter" aria-hidden="true"></i>
-            <a href data-ng-click="">All</a>
+            <a href role="button" data-ng-click="filterBy = 'all';" data-tooltip-placement="top" data-uib-tooltip="{{vm.totalProjectsCount}}">All</a>
             <span> / </span>
-            <a href data-ng-click="">Web</a>
+            <a href role="button" data-ng-click="filterBy = 'web';" data-tooltip-placement="top" data-uib-tooltip="{{vm.webProjectsCount}}">Web</a>
             <span> / </span>
-            <a href data-ng-click="">Mobile</a>
+            <a href role="button" data-ng-click="filterBy = 'mobile';" data-tooltip-placement="top" data-uib-tooltip="{{vm.mobileProjectsCount}}">Mobile</a>
         </div>
 
-        <div data-ng-if="vm.projects != null" class="project row" data-ng-repeat="prj in vm.projects">
-            <div data-ng-show="prj.previewFirst" class="col-md-6 preview-first">
+        <div data-ng-if="vm.projects != null" class="project row" data-ng-repeat="prj in vm.projects | projectsFilter : filterBy">
+            <div class="col-md-6 preview-first" data-ng-show="prj.previewFirst">
                 <div class="display" data-ng-if="prj.currPlatform!=null"
                      data-ng-class="prj.currPlatform.platform"
                      data-ng-init="clicked.prev = false; clicked.next = false"
                      data-ng-swipe-left="clicked.next = true; vm.nextImg(prj.currPlatform, clicked)"
                      data-ng-swipe-right="clicked.prev = true; vm.prevImg(prj.currPlatform, clicked)">
-                    <img class="template" data-ng-if="prj.currPlatform.frame!=null" data-ng-src="{{prj.currPlatform.frame}}" alt="">
+                    <img class="template"
+                         data-ng-if="prj.currPlatform.frame!=null"
+                         data-ng-src="{{prj.currPlatform.frame}}" alt="">
                     <div class="curr-img-wrapper">
-                        <img class="curr-img animate-default" data-ng-repeat="image in prj.currPlatform.images" data-ng-src="{{image}}" alt="" data-ng-if="prj.currPlatform.currImg==image" data-ng-class="{animateRight: clicked.prev, animateLeft: clicked.next}">
+                        <img class="curr-img animate-default" alt=""
+                             data-ng-repeat="image in prj.currPlatform.images"
+                             data-ng-src="{{image}}"
+                             data-ng-if="prj.currPlatform.currImg==image"
+                             data-ng-class="{animateRight: clicked.prev, animateLeft: clicked.next}">
                     </div>
                     <div class="arrows">
                         <div class="prev-arrow" data-ng-click="clicked.prev = true; clicked.next = false; vm.prevImg(prj.currPlatform, clicked)"></div>
                         <div class="next-arrow" data-ng-click="clicked.next = true; clicked.prev = false; vm.nextImg(prj.currPlatform, clicked)"></div>
+                    </div>
+                    <div class="zoomImage"
+                         data-ng-click="vm.open(prj.currPlatform.currImg);">
+                        <!--//////// NOT NORMAL-->
+                        <script type="text/ng-template" id="zoomModal.html">
+                            <div class="modal-header">
+                                <button title="Close (Esc)" type="button" class="close-zoom" data-ng-click="pc.close()">×</button>
+                            </div>
+                            <div class="modal-body" id="modal-body">
+                                <img data-ng-src="{{pc.imgScr}}" alt="">
+                            </div>
+                            <div class="modal-footer">
+                                <p class="zoom-description"></p>
+                            </div>
+                        </script>
                     </div>
                 </div>
             </div>
@@ -49,7 +69,9 @@
                 <p><i>{{prj.technologies}}</i></p>
                 <div data-ng-if="prj.currPlatform!=null">
                     <ul class="platforms-tabs tabs-horizontal clearfix">
-                        <li data-ng-repeat="platform in prj.platforms" data-ng-class="{ active: prj.currPlatform == platform }" class="platform-tab">
+                        <li class="platform-tab"
+                            data-ng-repeat="platform in prj.platforms"
+                            data-ng-class="{active: prj.currPlatform == platform}">
                             <a href="" role="button" data-ng-click="prj.currPlatform = platform">
                                 <i class="platform-icon {{platform.platformIcon}}"></i>
                             </a>
@@ -58,12 +80,15 @@
                 </div>
                 <ul data-ng-if="prj.currPlatform!=null" class="row preview-imgs-holder tabs-horizontal">
                     <li class="col-xs-3" data-ng-repeat="img in prj.currPlatform.images">
-                        <img data-ng-src="{{img}}" alt="" class="preview-image" data-ng-click="prj.currPlatform.currImg = img">
+                        <img alt="" class="preview-image"
+                             data-ng-src="{{img}}"
+                             data-ng-click="prj.currPlatform.currImg = img">
                     </li>
                 </ul>
             </div>
-            <div data-ng-show="!(prj.previewFirst)" class="col-md-6  preview-second">
-                <div class="display" data-ng-if="prj.currPlatform!=null"
+            <div class="col-md-6 preview-second" data-ng-show="!(prj.previewFirst)">
+                <div class="display"
+                     data-ng-if="prj.currPlatform!=null"
                      data-ng-class="prj.currPlatform.platform"
                      data-ng-init="clicked.prev = false; clicked.next = false"
                      data-ng-swipe-left="clicked.next = true; vm.nextImg(prj.currPlatform, clicked)"
@@ -76,6 +101,7 @@
                         <div class="prev-arrow" data-ng-click="clicked.prev = true; clicked.next = false; vm.prevImg(prj.currPlatform, clicked)"></div>
                         <div class="next-arrow" data-ng-click="clicked.next = true; clicked.prev = false; vm.nextImg(prj.currPlatform, clicked)"></div>
                     </div>
+                    <div class="zoomImage" data-ng-click="isZoomed = !isZoomed; vm.open();"></div>
                 </div>
             </div>
         </div>

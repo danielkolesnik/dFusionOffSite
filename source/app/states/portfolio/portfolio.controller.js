@@ -4,7 +4,18 @@ angular
 
     .module('layout.portfolio')
 
-    .controller('portfolioController', function ($scope, $timeout) {
+    .controller('portfolioController', function ($scope, $timeout, $uibModal, $log) {
+
+
+        var vm = $scope.vm = {
+            projects: [],
+            totalProjectsCount: 0,
+            webProjectsCount: 0,
+            mobileProjectsCount: 0,
+            filterBy: '',
+            prevImg: function(){},
+            nextImg: function(){}
+        };
 
         var projects = [
             {
@@ -12,6 +23,7 @@ angular
                 name: 'Bitсoin Merchant System',
                 description: 'Scalable and extremly secured bitcoin front office solution for cash exchange. Allows users to easily trade bitcoins for a number of foreign currencies. Modular architecture makes it easy to integrate the system with different crypto currency exchanges.',
                 technologies: 'Java, Hibernate, Spring, Angular.JS, Bootstrap',
+                tags: "web, mobile",
                 previewFirst: true,
                 platforms: [
                     {
@@ -28,6 +40,7 @@ angular
                 name: 'MultiKid',
                 description: 'Multiplication table trainer for Kid\'s.' + 'The best way to learn multiplication table with fun and engaging way for children. Intended for the improvement and testing of children calculation skills.',
                 technologies: 'Java, Android',
+                tags: "mobile",
                 previewFirst: false,
                 platforms: [
                     {
@@ -44,6 +57,7 @@ angular
                 name: 'DMS, Single Gateway for Enterprise Data',
                 description: 'The platform provides a single gateway to all enterprise files, office documents, mails and calendars locally and from outside of a company network. All resources are securely exposed to iOS and Android mobile applications with respect to company\'s privacy policy and taking into account domain\'s settings for users and groups.',
                 technologies: 'iOS, Android, Java, Spring, RabbitMQ, LDAP, JCIFS, Aspose',
+                tags: "web, mobile",
                 previewFirst: true,
                 platforms: [
                     {
@@ -74,6 +88,7 @@ angular
                 name: 'Disclosure/financial reporting management system',
                 description: 'This is a process-driven, collaborative solution that streamlines all of your regulatory disclosure and financial reporting by offering a flexible, easy-to-use XBRL solution that mitigates risk throughout the process, and ensures a single version of the truth, from creation to filing.',
                 technologies: 'Java, Hibernate, Flex, .Net, Adobe LiveCycle, SharePoint',
+                tags: "web",
                 previewFirst: true,
                 platforms: [
                     {
@@ -90,6 +105,7 @@ angular
                 name: 'Comparison Server',
                 description: 'The product is designed to compare revisions of text documents in DOC, DOCX, XLS, XLSX, HTML formats. Content and text style are matters of comparison. The product functions are available either through web service or Web UI allowing user to manually choose files to compare. The comparison output represents a document with visually highlighted differences between two revisions of source document which can be saved in HTML or PDF formats.',
                 technologies: 'Java, Apache POI, iText, Tika, PDFBox, Spring',
+                tags: "web",
                 previewFirst: false,
                 platforms: [
                     {
@@ -120,6 +136,7 @@ angular
                 name: 'AllAccess',
                 description: 'The AllAccess provides users with a quick look at the status of their connection and main features as well as data usage, mobile hotspot settings, Wi-Fi finder (viewing available networks, viewing network details), connect lite (start a session, share a file, file view), services synchronization.' + 'AllAccess is the Mobile App (based on Android 3.0).',
                 technologies: 'Flex, AIR, Android',
+                tags: "mobile",
                 previewFirst: true,
                 platforms: [
                     {
@@ -136,6 +153,7 @@ angular
                 name: 'ShackTracker',
                 description: 'ShackTracker provides an organized way to keep track of the progress of users home. Shacktracker keeps everything in one place, so user can always find important documents, e-mails, images, and receipts.' + 'It is one-stop shop for managing the whole process, from signing the papers to getting the keys, with the added bonus of informative tips at key homebuilding moments.',
                 technologies: 'Java, Play, Scala, CSS',
+                tags: "web",
                 previewFirst: false,
                 platforms: [
                     {
@@ -152,6 +170,7 @@ angular
                 name: 'CodeFresh',
                 description: 'Codefresh allows agile teams to collaborate effectively on any feature branch or pull request. With Codefresh, agile teams can find, isolate and resolve any issue immediately, spending no time on installation and configuration of complex environments.' + 'Codefresh leverages the latest Docker tools (compose, swarm, and machine) to deliver a productive developer experience while eliminating the typical disparity between local development and production environments.',
                 technologies: 'HML5, NodeJS, Mongo, AngularJS, Orion, Docker/CentOS7',
+                tags: "web",
                 previewFirst: true,
                 platforms: [
                     {
@@ -168,6 +187,7 @@ angular
                 name: 'WorldTV',
                 description: 'This is a platform to collect, store, aggregate, share videos, create your own TV channel out of YouTube videos, broadcast live from your mobile phone',
                 technologies: 'DHTML, CSS, JavaScript, PHP, Flex',
+                tags: "web",
                 previewFirst: false,
                 platforms: [
                     {
@@ -191,6 +211,7 @@ angular
                 name: 'Newsfinity',
                 description: 'ScoopDragon Publishing Limited operates one of Europe’s largest sports news aggregation networks and the largest in the UK. We can put your blog or news website in front of up to 20 million monthly visitors, with guaranteed traffic from passionate fans that flows directly to target site',
                 technologies: 'DHTML, CSS, JavaScript, PHP',
+                tags: "web, mobile",
                 previewFirst: true,
                 platforms: [
                     {
@@ -221,6 +242,7 @@ angular
                 name: 'Tangraph',
                 description: 'Tangraph is a graphing applet designed specifically with the sports statistics in mind. It offers a flexible, almost infinitely customizable interface and a powerful API.',
                 technologies: 'Flash, HTML, PHP',
+                tags: "web",
                 previewFirst: false,
                 platforms: [
                     {
@@ -244,6 +266,7 @@ angular
                 name: 'Partner system for TravelMenu',
                 description: 'Travelmenu offers visitors a full range of tourism products, which distinguishes us from our competitors sell only the hotels or tour only. You refer a customer can book a hotel, buy a ticket, sightseeing tours, as well as car hire, insurance, visa support, cruise, boat, etc.',
                 technologies: 'DHTML, CSS, JavaScript, PHP',
+                tags: "web",
                 previewFirst: true,
                 platforms: [
                     {
@@ -268,6 +291,7 @@ angular
                 name: 'PPC–Advertiser',
                 description: 'The main purpose of the system is to sell traffic to end-users (advertisers) within the PPC (Pay per click) system.',
                 technologies: 'PHP, Highload, Sphinx, Redis, MySQL',
+                tags: "web",
                 previewFirst: false,
                 platforms: []
             },
@@ -276,6 +300,7 @@ angular
                 name: 'Statoscope',
                 description: 'The application is aimed at visualizing the statistical data and world dynamics forecasts on the world map. It serves the purpose of popularizing the opportunities of the methods of mathematical modeling. The application is based on the results obtained by a research group of scientists from Moscow State University.',
                 technologies: 'Flash, Flex, AIR',
+                tags: "mobile",
                 previewFirst: true,
                 platforms: [
                     {
@@ -292,6 +317,7 @@ angular
                 name: 'Topology',
                 description: 'The Topology CSO aims to standardize the manner in which network topology is computed, exported, represented and visualized. Upon receiving topology data (e.g. from the Collector), the Topology CSO analyzes the data and produces the following outputs:',
                 technologies: 'Flex',
+                tags: "web,",
                 previewFirst: false,
                 platforms: [
                     {
@@ -312,23 +338,26 @@ angular
             //check is there are any projects?
                 for(var i in projects) {
                     projects[i].currPlatform = {}; //will be set as selected by default platform to preview
+                    if(projects[i].tags.indexOf('web') != -1)
+                        vm.webProjectsCount++;
+                    if(projects[i].tags.indexOf('obile') != -1)
+                        vm.mobileProjectsCount++;
 
                     if(projects[i].platforms.length != 0) {
                     //check is there are any platforms? and if it is -> setting the first as currPlatform
                         for(var n in projects[i].platforms) {
                             projects[i].platforms[n].currImg = ''; //will be shown on the device screen
 
-                            if((projects[i].platforms[n].images.length != 0)&&(projects[i].platforms[n].frame.length!=null)) { //////////////////////////??
+                            if((projects[i].platforms[n].images.length != 0)&&(projects[i].platforms[n].frame.length!=0)) { ///??
                             //check is there are any images + frames? and if it is -> setting the first as currImg
                                 projects[i].platforms[n].currImg = projects[i].platforms[n].images[0];
                             }
-                            else if(projects[i].platforms[n].frame.length==null) { //////////////////////////??
+                            else if(projects[i].platforms[n].frame.length==0) { ///??
                                 projects[i].platforms[n].frame = null;
                             }
                             else {
                             //ELSE currImg = null
                                 projects[i].platforms[n].currImg = null;
-
                             }
                         }
 
@@ -346,9 +375,11 @@ angular
             }
         })(projects);
 
-        var vm = $scope.vm = {
-            projects: projects
-        };
+        vm.projects = projects;
+
+        vm.totalProjectsCount = vm.projects.length;
+
+        vm.filterBy = 'all';
 
         vm.prevImg = function prevImg(curr, clicked) {
             var i = curr.images.indexOf(curr.currImg);
@@ -368,6 +399,41 @@ angular
             $timeout(function(){clicked.next = false;}, 500);
         };
 
-        // no-unused-vars =)
-        vm;
+        // var pc = this;
+
+        vm.open = function (imgScr) {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: 'zoomModal.html',
+                controller: 'modalInstanceController',
+                controllerAs: 'pc',
+                size: 'lg',
+                resolve: {
+                    imgScr: function () {
+                        return imgScr;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function () {
+                alert('after closing effect');
+            });
+        };
+    });
+
+
+
+angular
+
+    .module('layout.portfolio')
+
+    .controller('modalInstanceController', function ($uibModalInstance, imgScr) {
+        var pc = this;
+        pc.imgScr = imgScr;
+
+        pc.close = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
     });
