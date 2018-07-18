@@ -23,7 +23,7 @@ angular
                 name: 'Bitсoin Merchant System',
                 description: 'Scalable and extremly secured bitcoin front office solution for cash exchange. Allows users to easily trade bitcoins for a number of foreign currencies. Modular architecture makes it easy to integrate the system with different crypto currency exchanges.',
                 technologies: 'Java, Hibernate, Spring, Angular.JS, Bootstrap',
-                tags: "web, mobile",
+                tags: 'web, mobile',
                 previewFirst: true,
                 platforms: [
                     {
@@ -40,7 +40,7 @@ angular
                 name: 'MultiKid',
                 description: 'Multiplication table trainer for Kid\'s.' + 'The best way to learn multiplication table with fun and engaging way for children. Intended for the improvement and testing of children calculation skills.',
                 technologies: 'Java, Android',
-                tags: "mobile",
+                tags: 'mobile',
                 previewFirst: false,
                 platforms: [
                     {
@@ -57,7 +57,7 @@ angular
                 name: 'DMS, Single Gateway for Enterprise Data',
                 description: 'The platform provides a single gateway to all enterprise files, office documents, mails and calendars locally and from outside of a company network. All resources are securely exposed to iOS and Android mobile applications with respect to company\'s privacy policy and taking into account domain\'s settings for users and groups.',
                 technologies: 'iOS, Android, Java, Spring, RabbitMQ, LDAP, JCIFS, Aspose',
-                tags: "web, mobile",
+                tags: 'web, mobile',
                 previewFirst: true,
                 platforms: [
                     {
@@ -88,13 +88,13 @@ angular
                 name: 'Disclosure/financial reporting management system',
                 description: 'This is a process-driven, collaborative solution that streamlines all of your regulatory disclosure and financial reporting by offering a flexible, easy-to-use XBRL solution that mitigates risk throughout the process, and ensures a single version of the truth, from creation to filing.',
                 technologies: 'Java, Hibernate, Flex, .Net, Adobe LiveCycle, SharePoint',
-                tags: "web",
+                tags: 'web',
                 previewFirst: true,
                 platforms: [
                     {
                         platform: 'desktop',
                         platformIcon: 'fa fa-desktop',
-                        images: ['assets/images/portfolio/projects/preview/c1.jpg', 'assets/images/portfolio/projects/preview/cc2.jpg'],
+                        images: ['assets/images/portfolio/projects/c1.jpg', 'assets/images/portfolio/projects/cc2.jpg'],
                         active: true,
                         frame: 'assets/images/portfolio/devices/desktop.png'
                     }
@@ -105,27 +105,27 @@ angular
                 name: 'Comparison Server',
                 description: 'The product is designed to compare revisions of text documents in DOC, DOCX, XLS, XLSX, HTML formats. Content and text style are matters of comparison. The product functions are available either through web service or Web UI allowing user to manually choose files to compare. The comparison output represents a document with visually highlighted differences between two revisions of source document which can be saved in HTML or PDF formats.',
                 technologies: 'Java, Apache POI, iText, Tika, PDFBox, Spring',
-                tags: "web",
+                tags: 'web',
                 previewFirst: false,
                 platforms: [
                     {
                         platform: 'desktop',
                         platformIcon: 'fa fa-desktop',
-                        images: ['assets/images/portfolio/projects/preview/cs_main_1.jpg', 'assets/images/portfolio/projects/preview/cs.jpg'],
+                        images: ['assets/images/portfolio/projects/cs_main_1.jpg', 'assets/images/portfolio/projects/cs.jpg'],
                         active: true,
                         frame: 'assets/images/portfolio/devices/desktop.png'
                     },
                     {
                         platform: 'tablet',
                         platformIcon: 'fa fa-tablet',
-                        images: ['assets/images/portfolio/projects/preview/cs_main_1.jpg', 'assets/images/portfolio/projects/preview/cs.jpg'],
+                        images: ['assets/images/portfolio/projects/cs_main_1.jpg', 'assets/images/portfolio/projects/cs.jpg'],
                         active: false,
                         frame: 'assets/images/portfolio/devices/tablet.png'
                     },
                     {
                         platform: 'mobile-h',
                         platformIcon: 'fa fa-mobile',
-                        images: ['assets/images/portfolio/projects/preview/cs_main_1.jpg', 'assets/images/portfolio/projects/preview/cs.jpg'],
+                        images: ['assets/images/portfolio/projects/cs_main_1.jpg', 'assets/images/portfolio/projects/cs.jpg'],
                         active: false,
                         frame: 'assets/images/portfolio/devices/mobile-h.png'
                     }
@@ -136,13 +136,13 @@ angular
                 name: 'AllAccess',
                 description: 'The AllAccess provides users with a quick look at the status of their connection and main features as well as data usage, mobile hotspot settings, Wi-Fi finder (viewing available networks, viewing network details), connect lite (start a session, share a file, file view), services synchronization.' + 'AllAccess is the Mobile App (based on Android 3.0).',
                 technologies: 'Flex, AIR, Android',
-                tags: "mobile",
+                tags: 'mobile',
                 previewFirst: true,
                 platforms: [
                     {
                         platform: 'tablet',
                         platformIcon: 'fa fa-tablet',
-                        images: ['assets/images/portfolio/projects/preview/aa.jpg', 'assets/images/portfolio/projects/preview/aa2.jpg'],
+                        images: ['assets/images/portfolio/projects/aa.jpg', 'assets/images/portfolio/projects/aa2.jpg'],
                         active: true,
                         frame: 'assets/images/portfolio/devices/tablet.png'
                     }
@@ -153,7 +153,7 @@ angular
                 name: 'ShackTracker',
                 description: 'ShackTracker provides an organized way to keep track of the progress of users home. Shacktracker keeps everything in one place, so user can always find important documents, e-mails, images, and receipts.' + 'It is one-stop shop for managing the whole process, from signing the papers to getting the keys, with the added bonus of informative tips at key homebuilding moments.',
                 technologies: 'Java, Play, Scala, CSS',
-                tags: "web",
+                tags: 'web',
                 previewFirst: false,
                 platforms: [
                     {
@@ -170,7 +170,7 @@ angular
                 name: 'CodeFresh',
                 description: 'Codefresh allows agile teams to collaborate effectively on any feature branch or pull request. With Codefresh, agile teams can find, isolate and resolve any issue immediately, spending no time on installation and configuration of complex environments.' + 'Codefresh leverages the latest Docker tools (compose, swarm, and machine) to deliver a productive developer experience while eliminating the typical disparity between local development and production environments.',
                 technologies: 'HML5, NodeJS, Mongo, AngularJS, Orion, Docker/CentOS7',
-                tags: "web",
+                tags: 'web',
                 previewFirst: true,
                 platforms: [
                     {
@@ -187,7 +187,7 @@ angular
                 name: 'WorldTV',
                 description: 'This is a platform to collect, store, aggregate, share videos, create your own TV channel out of YouTube videos, broadcast live from your mobile phone',
                 technologies: 'DHTML, CSS, JavaScript, PHP, Flex',
-                tags: "web",
+                tags: 'web',
                 previewFirst: false,
                 platforms: [
                     {
@@ -211,20 +211,20 @@ angular
                 name: 'Newsfinity',
                 description: 'ScoopDragon Publishing Limited operates one of Europe’s largest sports news aggregation networks and the largest in the UK. We can put your blog or news website in front of up to 20 million monthly visitors, with guaranteed traffic from passionate fans that flows directly to target site',
                 technologies: 'DHTML, CSS, JavaScript, PHP',
-                tags: "web, mobile",
+                tags: 'web, mobile',
                 previewFirst: true,
                 platforms: [
                     {
                         platform: 'desktop',
                         platformIcon: 'fa fa-desktop',
-                        images: ['assets/images/portfolio/projects/preview/NF1.jpg', 'assets/images/portfolio/projects/preview/NF2.jpg'],
+                        images: ['assets/images/portfolio/projects/NF1.jpg', 'assets/images/portfolio/projects/NF2.jpg'],
                         active: true,
                         frame: 'assets/images/portfolio/devices/desktop.png'
                     },
                     {
                         platform: 'tablet',
                         platformIcon: 'fa fa-tablet',
-                        images: ['assets/images/portfolio/projects/preview/NF1.jpg', 'assets/images/portfolio/projects/preview/NF2.jpg'],
+                        images: ['assets/images/portfolio/projects/NF1.jpg', 'assets/images/portfolio/projects/NF2.jpg'],
                         active: false,
                         frame: 'assets/images/portfolio/devices/tablet.png'
                     },
@@ -242,20 +242,20 @@ angular
                 name: 'Tangraph',
                 description: 'Tangraph is a graphing applet designed specifically with the sports statistics in mind. It offers a flexible, almost infinitely customizable interface and a powerful API.',
                 technologies: 'Flash, HTML, PHP',
-                tags: "web",
+                tags: 'web',
                 previewFirst: false,
                 platforms: [
                     {
                         platform: 'desktop',
                         platformIcon: 'fa fa-desktop',
-                        images: ['assets/images/portfolio/projects/preview/tg.jpg', 'assets/images/portfolio/projects/preview/tg2.jpg'],
+                        images: ['assets/images/portfolio/projects/tg.jpg', 'assets/images/portfolio/projects/tg2.jpg'],
                         active: true,
                         frame: 'assets/images/portfolio/devices/desktop.png'
                     },
                     {
                         platform: 'tablet',
                         platformIcon: 'fa fa-tablet',
-                        images: ['assets/images/portfolio/projects/preview/tg.jpg', 'assets/images/portfolio/projects/preview/tg2.jpg'],
+                        images: ['assets/images/portfolio/projects/tg.jpg', 'assets/images/portfolio/projects/tg2.jpg'],
                         active: false,
                         frame: 'assets/images/portfolio/devices/tablet.png'
                     }
@@ -266,7 +266,7 @@ angular
                 name: 'Partner system for TravelMenu',
                 description: 'Travelmenu offers visitors a full range of tourism products, which distinguishes us from our competitors sell only the hotels or tour only. You refer a customer can book a hotel, buy a ticket, sightseeing tours, as well as car hire, insurance, visa support, cruise, boat, etc.',
                 technologies: 'DHTML, CSS, JavaScript, PHP',
-                tags: "web",
+                tags: 'web',
                 previewFirst: true,
                 platforms: [
                     {
@@ -291,7 +291,7 @@ angular
                 name: 'PPC–Advertiser',
                 description: 'The main purpose of the system is to sell traffic to end-users (advertisers) within the PPC (Pay per click) system.',
                 technologies: 'PHP, Highload, Sphinx, Redis, MySQL',
-                tags: "web",
+                tags: 'web',
                 previewFirst: false,
                 platforms: []
             },
@@ -300,13 +300,13 @@ angular
                 name: 'Statoscope',
                 description: 'The application is aimed at visualizing the statistical data and world dynamics forecasts on the world map. It serves the purpose of popularizing the opportunities of the methods of mathematical modeling. The application is based on the results obtained by a research group of scientists from Moscow State University.',
                 technologies: 'Flash, Flex, AIR',
-                tags: "mobile",
+                tags: 'mobile',
                 previewFirst: true,
                 platforms: [
                     {
                         platform: 'tablet',
                         platformIcon: 'fa fa-tablet',
-                        images: ['assets/images/portfolio/projects/preview/statoscope1.jpeg', 'assets/images/portfolio/projects/preview/statoscope2.jpeg'],
+                        images: ['assets/images/portfolio/projects/statoscope1.jpeg', 'assets/images/portfolio/projects/statoscope2.jpeg'],
                         active: true,
                         frame: 'assets/images/portfolio/devices/tablet.png'
                     }
@@ -317,13 +317,13 @@ angular
                 name: 'Topology',
                 description: 'The Topology CSO aims to standardize the manner in which network topology is computed, exported, represented and visualized. Upon receiving topology data (e.g. from the Collector), the Topology CSO analyzes the data and produces the following outputs:',
                 technologies: 'Flex',
-                tags: "web,",
+                tags: 'web,',
                 previewFirst: false,
                 platforms: [
                     {
                         platform: 'desktop',
                         platformIcon: 'fa fa-desktop',
-                        images: ['assets/images/portfolio/projects/preview/Topology1.jpg', 'assets/images/portfolio/projects/preview/Topology2.jpg'],
+                        images: ['assets/images/portfolio/projects/Topology1.jpg', 'assets/images/portfolio/projects/Topology2.jpg'],
                         active: true,
                         frame: 'assets/images/portfolio/devices/desktop.png'
                         // currImg: images[0] / null
@@ -399,9 +399,7 @@ angular
             $timeout(function(){clicked.next = false;}, 500);
         };
 
-        // var pc = this;
-
-        vm.open = function (imgScr) {
+        vm.open = function (currPlatform) {
             var modalInstance = $uibModal.open({
                 animation: true,
                 ariaLabelledBy: 'modal-title',
@@ -411,14 +409,13 @@ angular
                 controllerAs: 'pc',
                 size: 'lg',
                 resolve: {
-                    imgScr: function () {
-                        return imgScr;
+                    currPlatform: function () {
+                        return currPlatform;
                     }
                 }
             });
 
             modalInstance.result.then(function () {
-                alert('after closing effect');
             });
         };
     });
@@ -429,9 +426,25 @@ angular
 
     .module('layout.portfolio')
 
-    .controller('modalInstanceController', function ($uibModalInstance, imgScr) {
+    .controller('modalInstanceController', function ($uibModalInstance, currPlatform) {
         var pc = this;
-        pc.imgScr = imgScr;
+        pc.currPlatform = currPlatform;
+
+        pc.next = function(curr) {
+            var i = curr.images.indexOf(curr.currImg);
+            if(i == curr.images.length-1)  curr.currImg = curr.images[0];
+            else {
+                curr.currImg = curr.images[i+1];
+            }
+        };
+
+        pc.prev = function(curr) {
+            var i = curr.images.indexOf(curr.currImg);
+            if(i == 0)  curr.currImg = curr.images[curr.images.length-1];
+            else {
+                curr.currImg = curr.images[i-1];
+            }
+        };
 
         pc.close = function () {
             $uibModalInstance.dismiss('cancel');
