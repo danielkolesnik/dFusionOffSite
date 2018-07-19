@@ -47,21 +47,7 @@
                         <div class="next-arrow" data-ng-click="clicked.next = true; clicked.prev = false; vm.nextImg(prj.currPlatform, clicked)"></div>
                     </div>
                     <div class="zoomImage"
-                         data-ng-click="vm.open(prj.currPlatform);">
-                        <!--//////// NOT NORMAL-->
-                        <script type="text/ng-template" id="zoomModal.html">
-                            <div class="modal-header">
-                                <button title="Close (Esc)" type="button" class="close-zoom" data-ng-click="pc.close()">×</button>
-                            </div>
-                            <div class="modal-body" id="modal-body">
-                                <img data-ng-src="{{pc.currPlatform.currImg}}" alt="">
-                            </div>
-                            <div class="modal-footer">
-
-                            </div>
-                            <div class="prev-img" data-ng-click="pc.next(pc.currPlatform);"></div>
-                            <div class="next-img" data-ng-click="pc.prev(pc.currPlatform);"></div>
-                        </script>
+                         data-ng-click="vm.openModal(prj.currPlatform);">
                     </div>
                 </div>
             </div>
@@ -104,7 +90,7 @@
                         <div class="next-arrow" data-ng-click="clicked.next = true; clicked.prev = false; vm.nextImg(prj.currPlatform, clicked)"></div>
                     </div>
                     <div class="zoomImage"
-                         data-ng-click="vm.open(prj.currPlatform);">
+                         data-ng-click="vm.openModal(prj.currPlatform);">
                     </div>
                 </div>
             </div>

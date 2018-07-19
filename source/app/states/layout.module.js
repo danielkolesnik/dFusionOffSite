@@ -11,7 +11,8 @@ angular
         'layout.other',
         'layout.services',
         'layout.about',
-        'layout.portfolio'
+        'layout.portfolio',
+        'layout.contacts'
     ])
 
     .config( function ( $stateProvider ) {

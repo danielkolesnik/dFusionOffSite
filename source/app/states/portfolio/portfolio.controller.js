@@ -4,7 +4,7 @@ angular
 
     .module('layout.portfolio')
 
-    .controller('portfolioController', function ($scope, $timeout, $uibModal, $log) {
+    .controller('portfolioController', function ($scope, $timeout, $uibModal) {
 
 
         var vm = $scope.vm = {
@@ -12,9 +12,10 @@ angular
             totalProjectsCount: 0,
             webProjectsCount: 0,
             mobileProjectsCount: 0,
-            filterBy: '',
-            prevImg: function(){},
-            nextImg: function(){}
+            filterBy: 'all',
+            prevImg: prevImg,
+            nextImg: nextImg,
+            openModal: open
         };
 
         var projects = [
@@ -379,74 +380,49 @@ angular
 
         vm.totalProjectsCount = vm.projects.length;
 
-        vm.filterBy = 'all';
-
-        vm.prevImg = function prevImg(curr, clicked) {
+        function prevImg(curr, clicked) {
             var i = curr.images.indexOf(curr.currImg);
-            if(i == 0)  curr.currImg = curr.images[curr.images.length-1];
-            else {
+            if (i == 0) {
+                curr.currImg = curr.images[curr.images.length - 1];
+            } else {
                 curr.currImg = curr.images[i-1];
             }
             $timeout(function(){clicked.prev = false;}, 500);
-        };
+        }
 
-        vm.nextImg = function(curr, clicked) {
+        function nextImg(curr, clicked) {
             var i = curr.images.indexOf(curr.currImg);
             if(i == curr.images.length-1)  curr.currImg = curr.images[0];
             else {
                 curr.currImg = curr.images[i+1];
             }
             $timeout(function(){clicked.next = false;}, 500);
-        };
+        }
 
-        vm.open = function (currPlatform) {
-            var modalInstance = $uibModal.open({
+        function open (currPlatform) {
+            $uibModal.open({
                 animation: true,
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: 'zoomModal.html',
+                templateUrl: 'app/states/portfolio/modal.html',
                 controller: 'modalInstanceController',
-                controllerAs: 'pc',
                 size: 'lg',
                 resolve: {
                     currPlatform: function () {
                         return currPlatform;
                     }
                 }
-            });
+            }).result
+                .then(function ( success ) {
+                    console.log('modal success', success);
+                })
+                .catch(function ( error ) {
+                    console.log('modal error', error);
+                });
+        }
 
-            modalInstance.result.then(function () {
-            });
-        };
     });
 
 
 
-angular
 
-    .module('layout.portfolio')
-
-    .controller('modalInstanceController', function ($uibModalInstance, currPlatform) {
-        var pc = this;
-        pc.currPlatform = currPlatform;
-
-        pc.next = function(curr) {
-            var i = curr.images.indexOf(curr.currImg);
-            if(i == curr.images.length-1)  curr.currImg = curr.images[0];
-            else {
-                curr.currImg = curr.images[i+1];
-            }
-        };
-
-        pc.prev = function(curr) {
-            var i = curr.images.indexOf(curr.currImg);
-            if(i == 0)  curr.currImg = curr.images[curr.images.length-1];
-            else {
-                curr.currImg = curr.images[i-1];
-            }
-        };
-
-        pc.close = function () {
-            $uibModalInstance.dismiss('cancel');
-        };
-    });
