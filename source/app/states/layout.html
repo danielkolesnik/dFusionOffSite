@@ -1,55 +1,147 @@
-<nav id="header" class="navbar navbar-h navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button
-                type="button"
-                class="navbar-toggle"
-                data-toggle="collapse"
-                data-target="#mainNav"
-                    >
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" target="_blank" ng-href="https://github.com/course-js/JS_02_18">
-                <img src="assets/images/logo.gif" alt="Logo Alt" title="JS_02_18"/>
-            </a>
+<header id="header" class="navbar-h header sticky">
+    <div class="top-bar">
+        <div class="container">
+            <div class="pull-left left-widget">
+                <div class="widget">
+                    <ul class="contacts list-inline">
+                        <li class="text"><a href="skype:+12147369209?call"><span class="fa fa-phone"></span>+1 (214) 736-9209</a></li>
+                        <li class="text"><a href="mailto:contactus@dfusiontech.com"><span class="fa fa-envelope-o"></span>contactus@dfusiontech.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pull-right right-widget">
+                <div class="widget">
+                    <ul class="social list-inline">
+                        <li><a href="https://www.facebook.com/dfusiontechinc" class="fa fa-facebook"></a></li>
+                        <li><a href="https://www.linkedin.com/company/dfusion-tech" target="_blank" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div id="mainNav" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right text-uppercase">
-                <li class="active" data-ui-sref-active="active">
-                    <a
-                        data-toggle="collapse"
-                        data-target="#mainNav.in"
-                        data-ui-sref="layout.home"
-                            >
-                        Главная
-                    </a>
-                </li>
-                <li data-ui-sref-active="active">
-                    <a
-                        data-toggle="collapse"
-                        data-target="#mainNav.in"
-                        data-ui-sref="layout.other"
-                            >
-                        другая
-                    </a>
-                </li>
-                <li>
-                    <a
-                        data-toggle="collapse"
-                        data-target="#mainNav.in"
-                        href="javascript:void(0)"
-                        data-ng-click="root.sayNo();"
-                            >
-                        заготовка
-                    </a>
-                </li>
-            </ul>
-        </div>
+        <span class="close fa fa-chevron-down"></span>
     </div>
-</nav>
+
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="assets/images/logo_small.png" alt="dFusion Tech, Inc. Perfect implementation of your dreams.">
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="liHomeLink" class="active has-children" data-ui-sref-active="active">
+                        <a  title="Home"
+                            data-toggle="collapse"
+                            data-target="#mainNav.in"
+                            data-ui-sref="layout.home"
+                        >
+                            <span data-hover="Home">
+                                Home
+                            </span>
+                        </a>
+                    </li>
+                    <li id="liServicesLink" class="has-children" data-ui-sref-active="active">
+                        <a  title="Services"
+                            data-toggle="collapse"
+                            data-target="#mainNav.in"
+                            data-ui-sref="layout.services"
+                        >
+                            <span data-hover="Services">
+                                Services
+                            </span>
+                        </a>
+                    </li>
+                    <li id="liPortfolioLink" class="has-children" data-ui-sref-active="active">
+                        <a  title="Portfolio"
+                            data-toggle="collapse"
+                            data-target="#mainNav.in"
+                            data-ui-sref="layout.portfolio"
+                        >
+                            <span data-hover="Portfolio">
+                                Portfolio
+                            </span>
+                        </a>
+                    </li>
+                    <li id="liAboutLink" class="has-children" data-ui-sref-active="active">
+                        <a  title="About"
+                            data-toggle="collapse"
+                            data-target="#mainNav.in"
+                            data-ui-sref="layout.about"
+                        >
+                            <span data-hover="About">
+                                About
+                            </span>
+                        </a>
+                    </li>
+                    <li id="liContactsLink" class="has-children" data-ui-sref-active="active">
+                        <a  title="Contacts"
+                            data-toggle="collapse"
+                            data-target="#mainNav.in"
+                            data-ui-sref="layout.contacts"
+                        >
+                            <span data-hover="Contacts">
+                                Contacts
+                            </span>
+                        </a>
+                    </li>
+                    <!--<li id="liBlogLink" class="has-children">-->
+                        <!--<a  title="Blog"-->
+                            <!--data-toggle="collapse"-->
+                            <!--data-target="#mainNav.in"-->
+                            <!--href="javascript:void(0)"-->
+                            <!--data-ng-click="root.sayNo();"-->
+                        <!--&gt;-->
+                            <!--<span data-hover="Blog">-->
+                                <!--Blog-->
+                            <!--</span>-->
+                        <!--</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--<div class="sticky-holder" style="display: none;"></div>-->
+
+    <script>
+        function topBar() {
+            var topBarContainer = $(".top-bar .container");
+            topBarContainer.css({display: "none", height: "auto"}).attr("data-height", topBarContainer.height()).attr("style", "height: 0;").parent().removeClass("open")
+        }
+
+        $(function () {
+
+            $(".top-bar .close").on("click", function () {
+                var topBar = $(".top-bar");
+                var topBarContainer = $(".top-bar .container");
+                topBar.toggleClass("open");
+                if (topBar.hasClass("open")) {
+                    topBarContainer.height(topBarContainer.attr("data-height"))
+                } else {
+                    topBarContainer.attr("style", "height: 0;")
+                }
+            });
+            topBar();
+
+            var l = $(".navbar");
+            var p = $(".top-bar").height();
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > p) {
+                    l.addClass("navbar-fixed")
+                } else {
+                    l.removeClass("navbar-fixed")
+                }
+            })
+        });
+    </script>
+</header>
 
 <main
     id="main"

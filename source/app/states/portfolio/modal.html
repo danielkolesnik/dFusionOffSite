@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <button title="Close (Esc)" type="button" class="close-zoom" data-ng-click="vm.close()">×</button> <!-- $dismiss({test: 'test error'}) -->
+</div>
+<div class="modal-body" id="modal-body">
+    <img data-ng-src="{{vm.currPlatform.currImg}}" alt="">
+</div>
+<div class="modal-footer">
+    <!--<button class="btn btn-success" data-ng-click="$close({test: 'test success'})"> OK </button>-->
+</div>
+<div class="prev-img" data-ng-click="vm.prev();"></div>
+<div class="next-img" data-ng-click="vm.next();"></div>
