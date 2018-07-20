@@ -8,7 +8,7 @@
     <section class="content container">
         <div class="row">
             <div class="col-md-5">
-                <div class="map">
+                <div class="map animated fadeInLeft">
                     <h4>map will be here soon..</h4>
                 </div>
             </div>
@@ -16,8 +16,8 @@
                 <h2 class="animated fadeInDown heading">
                     <span class="title">Location</span>
                 </h2>
-                <p>dFusion Tech Inc. is a team with a strong technical background and dedication to excellence can enhance your business performance, facilitate sustainable growth and ensure your satisfaction</p>
-                <div class="row contacts-holder">
+                <p class="animated fadeInRight">dFusion Tech Inc. is a team with a strong technical background and dedication to excellence can enhance your business performance, facilitate sustainable growth and ensure your satisfaction</p>
+                <div class="row contacts-holder animated fadeInRight">
                     <div class="col-xs-12">
                         <ul class="contact-variants">
                             <li>
@@ -41,14 +41,23 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row">
-                    <form action="javascript:console.log('submitted');" id="contact-form" name="contactForm" role="form" method="post" class="col-md-12" novalidate>
+                <div class="row animated fadeInUp">
+                    <form
+                        action="javascript:void(null)"
+                        id="contact-form"
+                        name="contactForm"
+                        role="form"
+                        method="post"
+                        class="col-md-12"
+                        data-ng-submit="vm.submit()"
+                        novalidate
+                            >
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
-                                    <select name="gender" id="gender" class="form-control">
-                                        <option value="Mr">Mr.</option>
-                                        <option value="Ms">Ms.</option>
+                                    <select name="gender" id="gender" class="form-control" data-ng-model="vm.newContact.gender">
+                                        <option value="man">Mr.</option>
+                                        <option value="woman">Ms.</option>
                                     </select>
                                 </div>
                             </div>
@@ -100,12 +109,14 @@
                         </div>
                         <div class="row">
                             <div class="col-md-1">
-                                <a href role="button" id="btnRefreshCaptcha" name="RefreshCaptcha" class="btn btn-df-default btn-md">
+                                <a href role="button" id="btnRefreshCaptcha" name="RefreshCaptcha" class="btn btn-df-default btn-md" style="display: none;">
                                     <span class="glyphicon glyphicon-refresh"></span>
                                 </a>
                             </div>
                             <div class="col-md-4">
+                                <div class="captcha" style="display: none;">
 
+                                </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group" style="display: none;">
@@ -126,7 +137,7 @@
                             </div>
                         </div>
                     </form>
-                    <!--<div>-->
+                    <div>
                         <!--<code> <xmp>{{ vm.newContact | json:4 }}</xmp> </code>-->
                         <!--<br/>-->
                         <!--<span>_______DIRTY__TOUCH__VALID</span><br/>-->
@@ -134,7 +145,7 @@
                         <!--<span>EMAIL___ {{contactForm.email.$dirty}}__{{contactForm.email.$touched}}____{{contactForm.email.$valid}}____{{contactForm.email.$invalid}}</span><br><br>-->
                         <!--<span>PHONE__ {{contactForm.phone.$dirty}}__{{contactForm.phone.$touched}}____{{contactForm.phone.$valid}}____{{contactForm.phone.$invalid}}</span><br><br>-->
                         <!--<span>MESSAG_ {{contactForm.message.$dirty}}__{{contactForm.message.$touched}}____{{contactForm.message.$valid}}____{{contactForm.message.$invalid}}</span><br>-->
-                    <!--</div>-->
+                    </div>
                 </div>
             </div>
 

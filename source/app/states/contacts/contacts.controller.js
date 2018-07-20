@@ -16,6 +16,9 @@ angular
                 phone: '',
                 message: '',
                 captcha: ''
+            },
+            submit: function() {
+                console.log(this.newContact);
             }
         };
 

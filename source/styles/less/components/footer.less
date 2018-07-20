@@ -22,6 +22,16 @@
             padding-bottom: 62px;
         }
 
+        .footer-content-holder {
+            div + div {
+                @media @mdscreen {
+                    margin-top: 50px;
+                }
+            }
+        }
+
+
+
         .row {
             & > div > ul {
                 list-style: none;
@@ -109,50 +119,3 @@
         }
     }
 }
-
-//#footer {
-//    background: @footer-background;
-//    padding: 30px 0;
-//    /**
-//     *
-//     * local variables
-//     *
-//     */
-//    @footer-background:                #1e1c18;
-//    @footer-content-background:        #282725;
-//    @widget-background:                #393836;
-//    @widget-text-color:                #eee;
-//    @footer-text-color:                @grey-shade-12;
-//    @mobile-point-xs:                  320px;
-//    .footer-content-holder {
-//        background: @footer-content-background;
-//        border-radius: 10px;
-//        padding: 20px 40px;
-//        .footer-text-grey {
-//            color: @footer-text-color;
-//        }
-//    }
-//
-//    .widget {
-//        max-width: 450px;
-//        margin-right: auto;
-//        margin-left: auto;
-//        .widget-newsletter {
-//            height: 48px;
-//            color: @widget-text-color;
-//            background-color: @widget-background;
-//            border: none;
-//            border-radius: 30px 0px 0px 30px;
-//        }
-//        /**
-//         *
-//         * use media for better widget view on small devices ( resizing button )
-//         *
-//         */
-//        .btn-h {
-//            @media (max-width: @tablet-point) and (min-width: @mobile-point-xs) {
-//                padding: 14px;
-//            }
-//        }
-//    }
-//}

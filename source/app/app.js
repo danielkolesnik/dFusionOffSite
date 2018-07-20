@@ -16,7 +16,7 @@ angular
         'ui.bootstrap',
         'angularMoment',
         'ngTouch',
-        'ngAnimate',
+        'ngAnimate'
     ])
 
     .config( function ( $urlRouterProvider, $logProvider, $locationProvider, RestangularProvider, config ) {

@@ -15,6 +15,10 @@
 
         .row.fadeInRight {
             margin-top: 45px;
+
+            @media @mdscreen {
+                margin-top: 0;
+            }
         }
         .adv-logo {
             display: block;
@@ -31,6 +35,10 @@
                 padding: 0;
                 color: @malachite;
                 text-align: center;
+
+                @media @mdscreen {
+                    margin-top: 20px;
+                }
             }
 
             .adv-name {
@@ -51,6 +59,10 @@
                     margin-top: 6px;
                     text-transform: none;
                     color: @light-grey;
+                }
+
+                @media @lsmscreen {
+                    width: 100%;
                 }
             }
 
@@ -75,13 +87,29 @@
         padding: 0 15px;
         margin-bottom: 45px;
 
+        .row + .row {
+            margin-top: 40px;
+
+            @media @lsmscreen {
+                margin-top: 0;
+
+                .col-sm-4.col-sm-offset-2 {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        @media @lsmscreen {
+            .col-sm-4 + .col-sm-4 {
+                margin-top: 20px;
+            }
+        }
+
         .teammate {
             position: relative;
-            margin-bottom: -50px;
 
             .teammate-picture {
-                //display: inline-block;
-                float: left;
+                display: inline-block;
 
                 img {
                     border: 3px solid #e5e5e5;
@@ -90,10 +118,17 @@
             }
 
             .about {
-                display: inline-block;
-                margin-left: 123px;
-                position: relative;
-                bottom: 106px;
+
+                @media (min-width: 992px) and (max-width: 1200px) {
+                    padding-left: 15px;
+                }
+
+                @media (min-width: 480px) and @lsmscreen {
+                    p {
+                        width: 80%;
+                        margin: 0 auto;
+                    }
+                }
 
                 .name-and-post {
                     color: #10161c;
@@ -104,11 +139,11 @@
                 }
             }
 
-            @media (min-width: 768px) and (max-width: 992px) {
+            @media @lsmscreen {
                 margin-bottom: 0;
                 .teammate-picture {
                     text-align: center;
-                    float: none;
+
                     display: block;
                 }
 
@@ -119,7 +154,7 @@
                 }
             }
 
-            @media (min-width: 992px) and (max-width: 1200px) {
+            @media @lsmscreen {
                 .height-fix {
                     display: none;
                 }
