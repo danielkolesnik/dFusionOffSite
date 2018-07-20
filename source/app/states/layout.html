@@ -1,5 +1,5 @@
 <header id="header" class="navbar-h header sticky">
-    <div class="top-bar">
+    <div class="top-bar" data-ng-init="isOpen=false" data-ng-class="{open: isOpen}">
         <div class="container">
             <div class="pull-left left-widget">
                 <div class="widget">
@@ -18,10 +18,10 @@
                 </div>
             </div>
         </div>
-        <span class="close fa fa-chevron-down"></span>
+        <span class="close fa fa-chevron-down" data-ng-click="isOpen = !isOpen"></span>
     </div>
 
-    <nav class="navbar" role="navigation">
+    <nav class="navbar" scroll role="navigation"> <!--  data-ng-class="{navbarFixed: root.scrollReady}" -->
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -108,41 +108,7 @@
             </div>
         </div>
     </nav>
-    <!--<div class="sticky-holder" style="display: none;"></div>-->
-
-    <script>
-        function topBar() {
-            var topBarContainer = $(".top-bar .container");
-            topBarContainer.css({display: "none", height: "auto"}).attr("data-height", topBarContainer.height()).attr("style", "height: 0;").parent().removeClass("open")
-        }
-
-        $(function () {
-
-            $(".top-bar .close").on("click", function () {
-                var topBar = $(".top-bar");
-                var topBarContainer = $(".top-bar .container");
-                topBar.toggleClass("open");
-                if (topBar.hasClass("open")) {
-                    topBarContainer.height(topBarContainer.attr("data-height"))
-                } else {
-                    topBarContainer.attr("style", "height: 0;")
-                }
-            });
-            topBar();
-
-            var l = $(".navbar");
-            var p = $(".top-bar").height();
-            $(window).scroll(function () {
-                if ($(window).scrollTop() > p) {
-                    l.addClass("navbar-fixed")
-                } else {
-                    l.removeClass("navbar-fixed")
-                }
-            })
-        });
-    </script>
 </header>
-
 <main
     id="main"
     autoscroll="true"
