@@ -1,4 +1,6 @@
-# COURSE JS_02_18 #
+# DFusion Official WebSite #
+
+####HOWTO RUN IT after clone/download####
 
 #### We assume you have pre-installed node.js with npm, Gulp, Bower.
 
