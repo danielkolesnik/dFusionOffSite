@@ -172,17 +172,33 @@
                 </div>
                 <div class="sidebar-widget">
                     <h3 class="widget-title">Contact Form</h3>
-                    <form role="form" class="contact-form">
+                    <form
+                        id="contact-form"
+                        name="contactForm"
+                        role="form"
+                        method="post"
+                        class="contact-form"
+                        data-ng-submit="vm.submit()"
+                        novalidate
+                            >
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                            <input name="name" type="text" class="form-control" id="inputName" placeholder="Name" data-ng-model="vm.newContact.name"  data-ng-required="true">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email" data-ng-model="vm.newContact.email"  data-ng-required="true">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                            <textarea name="message" class="form-control" rows="3" placeholder="Message" data-ng-model="vm.newContact.message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-df-default">Submit</button>
+                        <button
+                            type="submit"
+                            class="btn btn-df-default"
+                            value="send"
+                            id="sendContacts"
+                            data-ng-disabled="contactForm.name.$invalid || contactForm.email.$invalid"
+                                >
+                            Submit
+                        </button>
                     </form>
                 </div>
             </aside>

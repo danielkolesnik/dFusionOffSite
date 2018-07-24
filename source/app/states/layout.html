@@ -1,5 +1,5 @@
 <header id="header" class="navbar-h header sticky">
-    <div class="top-bar" data-ng-init="isOpen=false" data-ng-class="{open: isOpen}">
+    <div id="topBar" class="top-bar" data-ng-init="isOpen=false" data-ng-class="{open: isOpen}">
         <div class="container">
             <div class="pull-left left-widget">
                 <div class="widget">
@@ -40,7 +40,7 @@
                     <li id="liHomeLink" class="active has-children" data-ui-sref-active="active">
                         <a  title="Home"
                             data-toggle="collapse"
-                            data-target="#mainNav.in"
+                            data-target=".navbar-collapse"
                             data-ui-sref="layout.home"
                         >
                             <span data-hover="Home">
@@ -51,7 +51,7 @@
                     <li id="liServicesLink" class="has-children" data-ui-sref-active="active">
                         <a  title="Services"
                             data-toggle="collapse"
-                            data-target="#mainNav.in"
+                            data-target=".navbar-collapse"
                             data-ui-sref="layout.services"
                         >
                             <span data-hover="Services">
@@ -62,7 +62,7 @@
                     <li id="liPortfolioLink" class="has-children" data-ui-sref-active="active">
                         <a  title="Portfolio"
                             data-toggle="collapse"
-                            data-target="#mainNav.in"
+                            data-target=".navbar-collapse"
                             data-ui-sref="layout.portfolio"
                         >
                             <span data-hover="Portfolio">
@@ -73,7 +73,7 @@
                     <li id="liAboutLink" class="has-children" data-ui-sref-active="active">
                         <a  title="About"
                             data-toggle="collapse"
-                            data-target="#mainNav.in"
+                            data-target=".navbar-collapse"
                             data-ui-sref="layout.about"
                         >
                             <span data-hover="About">
@@ -84,7 +84,7 @@
                     <li id="liContactsLink" class="has-children" data-ui-sref-active="active">
                         <a  title="Contacts"
                             data-toggle="collapse"
-                            data-target="#mainNav.in"
+                            data-target=".navbar-collapse"
                             data-ui-sref="layout.contacts"
                         >
                             <span data-hover="Contacts">
@@ -111,9 +111,9 @@
 </header>
 <main
     id="main"
-    autoscroll="true"
     data-toggle="collapse"
     data-target="#mainNav.in"
+    onload="root.goTo('topBar')"
     data-ui-view
         >
 </main>

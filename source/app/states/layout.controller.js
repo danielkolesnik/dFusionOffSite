@@ -7,7 +7,7 @@ angular
      */
     .module('app.layout')
 
-    .controller('layoutController', function ( $scope, toastr, action ) {
+    .controller('layoutController', function ( $scope, toastr, action, $location, $anchorScroll ) {
         // NOTE "root" means a "root visual model" the data which will use by view rendering and in nested views too
         var root = $scope.root = {
             action: action,
@@ -17,6 +17,11 @@ angular
              */
             sayNo: function () {
                 toastr.warning('Это действие не реализовано.', 'Предупреждение');
+            },
+
+            goTo: function (strId) {
+                $location.hash(strId);
+                $anchorScroll();
             }
         };
         // no-unused-vars =)
