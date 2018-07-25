@@ -5,22 +5,22 @@ angular
 
     .module('app')
 
-    .service('projectsService', function($timeout, $q, projectFactory, incomeProjects) {
-        var projectList = [];
+    .service('teamService', function ($timeout, $q, teammateFactory, incomeTeam) {
+        var teamList = [];
 
         return {
-            getProjectList: function() {
+            getTeamList: function() {
                 var deferred = $q.defer();
 
-                $timeout(function() {
+                $timeout(function(){
                     var dataCame = true,
-                        data = incomeProjects;
+                        data = incomeTeam;
 
                     if(dataCame) {
                         for(var i in data) {
-                            projectList.push(new projectFactory(data[i]));
+                            teamList.push(new teammateFactory(data[i]));
                         }
-                        deferred.resolve( projectList );
+                        deferred.resolve( teamList );
                     } else {
                         deferred.reject('An Error with taking data from server occurred.');
                     }
@@ -28,5 +28,5 @@ angular
 
                 return deferred.promise;
             }
-        };
+        }
     });

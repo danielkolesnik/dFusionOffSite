@@ -5,22 +5,28 @@ angular
 
     .module('layout.about')
 
-    .controller('aboutController', function ( $scope) {
+    .controller('aboutController', function ( $scope, teamService ) {
 
+        teamService
 
+            .getTeamList()
 
-        $scope.model = {
+            .then(function ( success ) {
+                if(success.length !== 0) {
+                    ///////////////////////////////////////////////////////////////////////// THERE U SHOULD MADE STUFF FROM NOTEBOOK p.404
+                    console.log(success);
+                } else {
+                    success = null;
+                }
+            })
 
-        };
+            .catch(function ( failReason ) {
+                console.warn(failReason);
+            });
 
-        // $scope.techTabs = {
-        //     // languages : [Java, C#, JavaScript, Groovy, Objective-C, PHP, PL/SQL, VBA, PowerShell, ActionScript 3, xHTML/HTML5],
-        // };
-        // NOTE "vm" means a "visual model" the data which will use by view rendering
         var vm = $scope.vm = {
 
         };
         // no-unused-vars =)
         vm;
-
     });

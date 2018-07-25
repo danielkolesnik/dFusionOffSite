@@ -1,25 +1,4 @@
-//
-// 'use strict';
-//
-// angular
-//
-//     .module('app')
-//
-//     .controller('footerController', function ( $scope, toastr ) {
-//         var vm = $scope.vm = {
-//             sayNo: function () {
-//                 toastr.warning('Это действие не реализовано.', 'Предупреждение');
-//             }
-//         }
-//     });
 
-
-
-
-// sayNo: function () {
-//     toastr.warning('Это действие не реализовано.', 'Предупреждение');
-// }
-//
 'use strict';
 
 angular

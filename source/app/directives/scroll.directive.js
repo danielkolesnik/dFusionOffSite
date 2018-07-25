@@ -7,17 +7,17 @@ angular
 
     .directive('scroll', function ( $window ) {
         return {
+            restrict: 'A',
+            /**
+             * Toggle class on the element.
+             * @param {obj} scope Scope.
+             * @param {obj} elem Element.
+             * @returns {void}
+             */
             link: function (scope, elem) {
                 angular.element($window).on('scroll', function () {
                     elem
                         .toggleClass('navbarFixed', (this.pageYOffset >= 40));
-                    // if (this.pageYOffset >= 40) {
-                    //     scope.root.scrollReady = true;
-                    //     console.log("yes", scope.root.scrollReady);
-                    // } else {
-                    //     scope.root.scrollReady = false;
-                    //     console.log("no", scope.root.scrollReady);
-                    // }
                 });
             }
         };

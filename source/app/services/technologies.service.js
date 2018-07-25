@@ -5,22 +5,22 @@ angular
 
     .module('app')
 
-    .service('projectsService', function($timeout, $q, projectFactory, incomeProjects) {
-        var projectList = [];
+    .service('technologiesService', function($timeout, $q, technologyFactory, incomeTechnologies) {
+        var technologiesList = [];
 
         return {
-            getProjectList: function() {
+            getTechList: function () {
                 var deferred = $q.defer();
 
                 $timeout(function() {
                     var dataCame = true,
-                        data = incomeProjects;
+                        data = incomeTechnologies;
 
                     if(dataCame) {
                         for(var i in data) {
-                            projectList.push(new projectFactory(data[i]));
+                            technologiesList.push(new technologyFactory(data[i]));
                         }
-                        deferred.resolve( projectList );
+                        deferred.resolve( technologiesList );
                     } else {
                         deferred.reject('An Error with taking data from server occurred.');
                     }
