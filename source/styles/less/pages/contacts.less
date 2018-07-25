@@ -1,0 +1,56 @@
+#contactsPage {
+    .content {
+
+        .map {
+            height: 590px;
+            width: 100%;
+            background-color: @malachite;
+            border: 5px solid black;
+        }
+
+        .heading {
+            margin-bottom: 40px;
+        }
+
+        .contacts-holder {
+            margin-bottom: 35px;
+        }
+
+        .contact-variants {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                margin-bottom: 10px;
+
+                a {
+                    color: @malachite;
+                    text-decoration: none;
+                    font-size: 12px;
+                    transition: color 0.2s;
+
+                    &:hover {
+                        color: black;
+                    }
+
+                    i, span {
+                        text-align: center;
+                        width: 20px;
+                        color: @malachite;
+                        margin-right: 10px;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+
+        #contact-form {
+            textarea {
+                min-height: 150px;
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,128 @@
+<div id="portfolioPage">
+    <section class="page-heading">
+        <div class="container">
+            <h1>Portfolio</h1>
+        </div>
+    </section>
+
+    <section class="content container">
+        <h2 class="animated fadeInDown heading">
+            <span class="title"> What we have done </span>
+        </h2>
+        <h3 class="animated fadeInDown heading">
+            <span class="subtitle"> Here is some of our recent work. We thank all our outstanding clients who we had a great pleasure to work with. </span>
+        </h3>
+        <!--<div>-->
+            <!--<code> {{ prj.currPlatform | json }} </code>-->
+            <!--&lt;!&ndash;<br/>&ndash;&gt;-->
+        <!--</div>-->
+        <div class="projects-filter row">
+            <i class="fa fa-filter" aria-hidden="true"></i>
+            <a href role="button" data-ng-click="filterBy = 'all';" data-tooltip-placement="top" data-uib-tooltip="{{vm.totalProjectsCount}}">All</a>
+            <span> / </span>
+            <a href role="button" data-ng-click="filterBy = 'web';" data-tooltip-placement="top" data-uib-tooltip="{{vm.webProjectsCount}}">Web</a>
+            <span> / </span>
+            <a href role="button" data-ng-click="filterBy = 'mobile';" data-tooltip-placement="top" data-uib-tooltip="{{vm.mobileProjectsCount}}">Mobile</a>
+        </div>
+
+        <div data-ng-if="vm.projects != null" class="project row" data-ng-repeat="prj in vm.projects | projectsFilter : filterBy">
+            <div class="col-md-6 preview-first" data-ng-show="prj.previewFirst">
+                <div class="display" data-ng-if="prj.currPlatform!=null"
+                     data-ng-class="prj.currPlatform.platform"
+                     data-ng-init="clicked.prev = false; clicked.next = false"
+                     data-ng-swipe-left="clicked.next = true; vm.nextImg(prj.currPlatform, clicked)"
+                     data-ng-swipe-right="clicked.prev = true; vm.prevImg(prj.currPlatform, clicked)">
+                    <img class="template"
+                         data-ng-if="prj.currPlatform.frame!=null"
+                         data-ng-src="{{prj.currPlatform.frame}}" alt="">
+                    <div class="curr-img-wrapper">
+                        <img class="curr-img animate-default" alt=""
+                             data-ng-repeat="image in prj.currPlatform.images"
+                             data-ng-src="{{image}}"
+                             data-ng-if="prj.currPlatform.currImg==image"
+                             data-ng-class="{animateRight: clicked.prev, animateLeft: clicked.next}">
+                    </div>
+                    <div class="arrows">
+                        <div class="prev-arrow" data-ng-click="clicked.prev = true; clicked.next = false; vm.prevImg(prj.currPlatform, clicked)"></div>
+                        <div class="next-arrow" data-ng-click="clicked.next = true; clicked.prev = false; vm.nextImg(prj.currPlatform, clicked)"></div>
+                    </div>
+                    <div class="zoomImage"
+                         data-ng-click="vm.openModal(prj.currPlatform);">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 about-project">
+                <h4 class="name"><b>{{prj.name}}</b></h4>
+                <p class="description">{{prj.description}}</p>
+                <p><i>{{prj.technologies}}</i></p>
+                <div data-ng-if="prj.currPlatform!=null">
+                    <ul class="platforms-tabs tabs-horizontal clearfix">
+                        <li class="platform-tab"
+                            data-ng-repeat="platform in prj.platforms"
+                            data-ng-class="{active: prj.currPlatform == platform}">
+                            <a href="" role="button" data-ng-click="prj.currPlatform = platform">
+                                <i class="platform-icon {{platform.platformIcon}}"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul data-ng-if="prj.currPlatform!=null" class="row preview-imgs-holder tabs-horizontal">
+                    <li class="col-xs-3" data-ng-repeat="img in prj.currPlatform.images">
+                        <img alt="" class="preview-image"
+                             data-ng-src="{{img}}"
+                             data-ng-click="prj.currPlatform.currImg = img">
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 preview-second" data-ng-show="!(prj.previewFirst)">
+                <div class="display"
+                     data-ng-if="prj.currPlatform!=null"
+                     data-ng-class="prj.currPlatform.platform"
+                     data-ng-init="clicked.prev = false; clicked.next = false"
+                     data-ng-swipe-left="clicked.next = true; vm.nextImg(prj.currPlatform, clicked)"
+                     data-ng-swipe-right="clicked.prev = true; vm.prevImg(prj.currPlatform, clicked)">
+                    <img class="template" data-ng-if="prj.currPlatform.frame!=null" data-ng-src="{{prj.currPlatform.frame}}" alt="">
+                    <div class="curr-img-wrapper">
+                        <img class="curr-img animate-default" data-ng-repeat="image in prj.currPlatform.images" data-ng-src="{{image}}" alt="" data-ng-if="prj.currPlatform.currImg==image" data-ng-class="{animateRight: clicked.prev, animateLeft: clicked.next}">
+                    </div>
+                    <div class="arrows">
+                        <div class="prev-arrow" data-ng-click="clicked.prev = true; clicked.next = false; vm.prevImg(prj.currPlatform, clicked)"></div>
+                        <div class="next-arrow" data-ng-click="clicked.next = true; clicked.prev = false; vm.nextImg(prj.currPlatform, clicked)"></div>
+                    </div>
+                    <div class="zoomImage"
+                         data-ng-click="vm.openModal(prj.currPlatform);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-panel">
+        <ul class="logos">
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/affinity-media-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/affinity-media-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/travelmenu-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/travelmenu-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/tangrapth-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/tangrapth-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/flexisus-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/flexisus-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+        </ul>
+    </section>
+</div>

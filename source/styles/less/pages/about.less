@@ -1,0 +1,164 @@
+#aboutPage {
+    .heading {
+        margin-bottom: 40px;
+    }
+
+    .advantages-block {
+        padding: 0 15px;
+
+        @media @lsmscreen {
+            text-align: center;
+            .col-sm-4 {
+                margin: 0 0 20px;
+            }
+        }
+
+        .row.fadeInRight {
+            margin-top: 45px;
+
+            @media @mdscreen {
+                margin-top: 0;
+            }
+        }
+        .adv-logo {
+            display: block;
+            text-decoration: none;
+            position: relative;
+
+            .adv-icon {
+                width: 15%;
+                position: relative;
+                bottom: 10px;
+                font-size: 29px;
+                background: none;
+                height: auto;
+                padding: 0;
+                color: @malachite;
+                text-align: center;
+
+                @media @mdscreen {
+                    margin-top: 20px;
+                }
+            }
+
+            .adv-name {
+                width: 84%;
+                display: inline-block;
+
+
+                h2 {
+                    padding-top: 0;
+                    text-transform: uppercase;
+                    font-size: 17px;
+                    margin: 0;
+                    color: @default-black;
+                }
+
+                h3 {
+                    font-size: 14px;
+                    margin-top: 6px;
+                    text-transform: none;
+                    color: @light-grey;
+                }
+
+                @media @lsmscreen {
+                    width: 100%;
+                }
+            }
+
+            &:hover {
+                .adv-icon {
+                    color: @default-black;
+                }
+
+                .adv-name h2 {
+                    color: @malachite;
+                }
+            }
+        }
+
+        .adv-description {
+            margin-top: 7px;
+        }
+
+    }
+
+    .team {
+        padding: 0 15px;
+        margin-bottom: 45px;
+
+        .row + .row {
+            margin-top: 40px;
+
+            @media @lsmscreen {
+                margin-top: 0;
+
+                .col-sm-4.col-sm-offset-2 {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        @media @lsmscreen {
+            .col-sm-4 + .col-sm-4 {
+                margin-top: 20px;
+            }
+        }
+
+        .teammate {
+            position: relative;
+
+            .teammate-picture {
+                display: inline-block;
+
+                img {
+                    border: 3px solid #e5e5e5;
+                    border-radius: 4px;
+                }
+            }
+
+            .about {
+
+                @media (min-width: 992px) and (max-width: 1200px) {
+                    padding-left: 15px;
+                }
+
+                @media (min-width: 480px) and @lsmscreen {
+                    p {
+                        width: 80%;
+                        margin: 0 auto;
+                    }
+                }
+
+                .name-and-post {
+                    color: #10161c;
+                    margin: 0;
+                    margin-bottom: 11px;
+                    font-size: 15px;
+                    line-height: normal;
+                }
+            }
+
+            @media @lsmscreen {
+                margin-bottom: 0;
+                .teammate-picture {
+                    text-align: center;
+
+                    display: block;
+                }
+
+                .about {
+                    bottom: 0;
+                    margin: auto;
+                    text-align: center;
+                }
+            }
+
+            @media @lsmscreen {
+                .height-fix {
+                    display: none;
+                }
+            }
+        }
+    }
+}

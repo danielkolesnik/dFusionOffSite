@@ -1,7 +1,6 @@
-# DFusion Official WebSite #
+# dFusion Official WebSite #
 
 #### HOWTO RUN IT after clone/download ####
-
 #### We assume you have pre-installed node.js with npm, Gulp, Bower.
 
 Build process of project depend on [```Node.js```](https://nodejs.org). Used package managers its [```Bower```](https://bower.io/) and [```npm```](https://www.npmjs.com/get-npm). Core of builder is [```Gulp```](https://gulpjs.com/).

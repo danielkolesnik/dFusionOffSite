@@ -1,0 +1,182 @@
+<div id="contactsPage">
+    <section class="page-heading">
+        <div class="container">
+            <h1>Contacts</h1>
+        </div>
+    </section>
+
+    <section class="content container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="map animated fadeInLeft">
+                    <h4>map will be here soon..</h4>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <h2 class="animated fadeInDown heading">
+                    <span class="title">Location</span>
+                </h2>
+                <p class="animated fadeInRight">dFusion Tech Inc. is a team with a strong technical background and dedication to excellence can enhance your business performance, facilitate sustainable growth and ensure your satisfaction</p>
+                <div class="row contacts-holder animated fadeInRight">
+                    <div class="col-xs-12">
+                        <ul class="contact-variants">
+                            <li>
+                                <a href="tel:+12147369209"> <!--callto:... / skype:...?call-->
+                                    <i class="fa fa-phone"></i>
+                                    +1 (214) 736-9209
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:contactus@dfusiontech.com">
+                                    <i class="fa fa-envelope-o"></i>
+                                    contactus@dfusiontech.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="skype:ekalosha?chat">
+                                    <i class="fa fa-skype"></i>
+                                    ekalosha
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row animated fadeInUp">
+                    <form
+                        id="contact-form"
+                        name="contactForm"
+                        role="form"
+                        method="post"
+                        class="col-md-12"
+                        data-ng-submit="vm.submit()"
+                        novalidate
+                            >
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <select name="gender" id="gender" class="form-control" data-ng-model="vm.newContact.gender">
+                                        <option value="man">Mr.</option>
+                                        <option value="woman">Ms.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <input name="name" id="name" name="ContactName" type="text" placeholder="*Contact Name" class="form-control" data-ng-required="true" data-ng-model="vm.newContact.name">
+                                    <i class="feedback-icon"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <input
+                                        name="email"
+                                        type="email"
+                                        placeholder="*Email"
+                                        class="form-control"
+                                        data-ng-model="vm.newContact.email"
+                                        data-ng-required="true"
+                                            />
+                                    <i class="feedback-icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input name="companyName" type="text" placeholder="Company Name" class="form-control" data-ng-model="vm.newContact.company">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input
+                                        name="phone"
+                                        type="tel"
+                                        placeholder="*Phone in format: +(country code) number"
+                                        class="form-control"
+                                        data-ng-model="vm.newContact.phone"
+                                        data-ng-required="true"
+                                            />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea name="message" placeholder="*Message" class="form-control" data-ng-required="true" data-ng-model="vm.newContact.message"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <a href role="button" id="btnRefreshCaptcha" name="RefreshCaptcha" class="btn btn-df-default btn-md" style="display: none;">
+                                    <span class="glyphicon glyphicon-refresh"></span>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="captcha" style="display: none;">
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group" style="display: none;">
+                                    <input name="captcha" type="text" placeholder="*Write captcha" class="form-control" data-ng-model="vm.newContact.captcha">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <button
+                                    type="submit"
+                                    value="send"
+                                    id="sendContacts"
+                                    class="btn btn-df-default btn-md btn-block"
+                                    data-ng-disabled="contactForm.name.$invalid || contactForm.message.$invalid || (contactForm.email.$invalid && contactForm.phone.$invalid)"
+                                        >
+                                    Send
+                                </button>
+                                <!--   <div><small>enter email or phone</small></div> red -->
+                            </div>
+                        </div>
+                    </form>
+                    <div>
+                        <!--<code> <xmp>{{ vm.newContact | json:4 }}</xmp> </code>-->
+                        <!--<br/>-->
+                        <!--<span>_______DIRTY__TOUCH__VALID</span><br/>-->
+                        <!--<span>NAME___ {{contactForm.name.$dirty}}__{{contactForm.name.$touched}}____{{contactForm.name.$valid}}____{{contactForm.name.$invalid}}</span><br><br>-->
+                        <!--<span>EMAIL___ {{contactForm.email.$dirty}}__{{contactForm.email.$touched}}____{{contactForm.email.$valid}}____{{contactForm.email.$invalid}}</span><br><br>-->
+                        <!--<span>PHONE__ {{contactForm.phone.$dirty}}__{{contactForm.phone.$touched}}____{{contactForm.phone.$valid}}____{{contactForm.phone.$invalid}}</span><br><br>-->
+                        <!--<span>MESSAG_ {{contactForm.message.$dirty}}__{{contactForm.message.$touched}}____{{contactForm.message.$valid}}____{{contactForm.message.$invalid}}</span><br>-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="partners-panel">
+        <ul class="logos">
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/affinity-media-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/affinity-media-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/travelmenu-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/travelmenu-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/tangrapth-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/tangrapth-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0);">
+                    <img class="wow zoomIn animated" data-wow-delay="1.3s" src="assets/images/partners/flexisus-logo.png" alt="Affinity Media" style="visibility: visible; animation-delay: 1.3s;">
+                    <span class="hover"> <img src="assets/images/partners/flexisus-logo-hover.png" alt="Affinity Media"> </span>
+                </a>
+            </li>
+        </ul>
+    </section>
+</div>

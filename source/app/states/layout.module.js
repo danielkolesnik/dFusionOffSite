@@ -9,6 +9,10 @@ angular
     .module('app.layout', [
         'layout.home',
         'layout.other',
+        'layout.services',
+        'layout.about',
+        'layout.portfolio',
+        'layout.contacts'
     ])
 
     .config( function ( $stateProvider ) {
