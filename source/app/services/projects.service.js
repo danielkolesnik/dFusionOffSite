@@ -11,6 +11,7 @@ angular
         return {
             getProjectList: function() {
                 var deferred = $q.defer();
+                projectList = [];
 
                 $timeout(function() {
                     var dataCame = true,

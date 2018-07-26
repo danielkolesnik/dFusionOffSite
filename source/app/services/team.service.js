@@ -11,6 +11,7 @@ angular
         return {
             getTeamList: function() {
                 var deferred = $q.defer();
+                teamList = [];
 
                 $timeout(function(){
                     var dataCame = true,
@@ -28,5 +29,5 @@ angular
 
                 return deferred.promise;
             }
-        }
+        };
     });
