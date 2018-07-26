@@ -54,7 +54,6 @@ angular
                 id: 5
             }
         ];
-        var currIndex = 0;
 
         ApiService.getData()
             .then(function ( success ) {

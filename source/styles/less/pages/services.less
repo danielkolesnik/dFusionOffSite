@@ -63,6 +63,7 @@
 
                     &:last-child {
                         border-bottom: 1px solid #ddd;
+                        margin-bottom: -2px;
 
                         &:after {
                             bottom: -1px;
@@ -143,11 +144,16 @@
                 margin: 0 0 0 15px;
                 padding: 0;
             }
+
             h3 {
                 margin-top: 0;
-                margin-left: 30px;
+                margin-left: 15px;
                 line-height: 1.1;
                 font-size: 24px;
+            }
+
+            .circle-check-list {
+                margin-left: 0;
             }
 
             @media @mdscreen {
@@ -174,6 +180,10 @@
 
 
         .sidebar {
+
+            @media @mdscreen {
+                margin-top: 40px;
+            }
 
             .sidebar-widget {
                 .widget-title {

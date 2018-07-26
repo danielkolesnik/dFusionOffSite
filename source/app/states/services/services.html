@@ -40,119 +40,24 @@
                     <h2 class="animated fadeInDown heading" style="margin: 20px 0 40px 0;">
                         <span class="title">Technologies We Master</span>
                     </h2>
-                    <div ng-controller="servicesController" class="clearfix">
+                    <div class="clearfix">
                         <uib-tabset active="active">
-                            <uib-tab index="0" heading="Programming/scripting languages">
-                                <div class="row">
-                                    <h3>Outstanding skills</h3>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul class="circle-check-list list">
-                                            <li>Java</li>
-                                            <li>C#</li>
-                                            <li>JavaScript</li>
-                                            <li>Groovy</li>
-                                            <li>Objective-C</li>
-                                        </ul>
+                            <uib-tab data-ng-repeat="tech in vm.technologies" index="$index" heading="{{tech.field}}">
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <h3>{{tech.headline}}</h3>
                                     </div>
-                                    <div class="col-md-6">
-                                        <ul class="circle-check-list list">
-                                            <li>PHP</li>
-                                            <li>PL/SQL</li>
-                                            <li>VBA</li>
-                                            <li>PowerShell</li>
-                                            <li>ActionScript 3</li>
-                                            <li>xHTML/HTML5</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </uib-tab>
-                            <uib-tab index="1" heading="Frameworks and technologies">
-                                <div class="row">
-                                    <h3>Outstanding skills</h3>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul class="circle-check-list list">
-                                            <li>Sping MVC/WS/Integration/Security</li>
-                                            <li>EJB, JPA/Hibernate</li>
-                                            <li>Servlets/JSP, JSTL, JSF, GWT, XML/XSLT</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul class="circle-check-list list">
-                                            <li>Flash/Flex 3+/AIR</li>
-                                            <li>jQuery/AngularJS/ExtJS/Dojo/Gulp</li>
-                                            <li>CSS2/CSS3/LESS</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </uib-tab>
-                            <uib-tab index="2" heading="Databases(SQL, NoSQL)">
-                                <div class="row">
-                                    <h3>Design and development</h3>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul class="circle-check-list list">
-                                            <li>MySQL</li>
-                                            <li>MSSQL</li>
-                                            <li>Oracle</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul class="circle-check-list list">
-                                            <li>Memcached</li>
-                                            <li>Redis</li>
-                                            <li>PostageSQL</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </uib-tab>
-                            <uib-tab index="3" heading="Platforms and servers">
-                                <div class="row">
-                                    <h3>Administration and development</h3>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul class="circle-check-list list">
-                                            <li>JBoss</li>
-                                            <li>IBM WebSphere</li>
-                                            <li>Oracle WebLogic</li>
-                                            <li>Tomcat</li>
-                                            <li>Apache Solr</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul class="circle-check-list list">
-                                            <li>RabbitMQ</li>
-                                            <li>Adobe LiveCycle</li>
-                                            <li>Apache</li>
-                                            <li>SharePoint</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </uib-tab>
-                            <uib-tab index="4" heading="Project Management/Continuous integration">
-                                <div class="row">
-                                    <h3>Extended usage</h3>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <ul class="circle-check-list list">
-                                            <li>Jira</li>
-                                            <li>SVN</li>
-                                            <li>Hudson</li>
-                                            <li>TFS</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul class="circle-check-list list">
-                                            <li>Redmine</li>
-                                            <li>VSS</li>
-                                            <li>MantisBT</li>
-                                        </ul>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <ul class="circle-check-list list">
+                                                <li data-ng-repeat="skill in tech.leftRow">{{skill}}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <ul class="circle-check-list list">
+                                                <li data-ng-repeat="skill in tech.rightRow">{{skill}}</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </uib-tab>
@@ -172,17 +77,33 @@
                 </div>
                 <div class="sidebar-widget">
                     <h3 class="widget-title">Contact Form</h3>
-                    <form role="form" class="contact-form">
+                    <form
+                        id="contact-form"
+                        name="contactForm"
+                        role="form"
+                        method="post"
+                        class="contact-form"
+                        data-ng-submit="vm.submit()"
+                        novalidate
+                            >
                         <div class="form-group">
-                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                            <input name="name" type="text" class="form-control" id="inputName" placeholder="Name" data-ng-model="vm.newContact.name"  data-ng-required="true">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email" data-ng-model="vm.newContact.email"  data-ng-required="true">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                            <textarea name="message" class="form-control" rows="3" placeholder="Message" data-ng-model="vm.newContact.message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-df-default">Submit</button>
+                        <button
+                            type="submit"
+                            class="btn btn-df-default"
+                            value="send"
+                            id="sendContacts"
+                            data-ng-disabled="contactForm.name.$invalid || contactForm.email.$invalid"
+                                >
+                            Submit
+                        </button>
                     </form>
                 </div>
             </aside>
