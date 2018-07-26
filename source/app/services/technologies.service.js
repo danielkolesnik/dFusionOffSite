@@ -10,6 +10,7 @@ angular
 
         return {
             getTechList: function () {
+                technologiesList = [];
                 var deferred = $q.defer();
 
                 $timeout(function() {
