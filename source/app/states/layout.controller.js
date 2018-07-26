@@ -19,8 +19,8 @@ angular
                 toastr.warning('Это действие не реализовано.', 'Предупреждение');
             },
 
-            goTo: function (strId) {
-                $location.hash(strId);
+            goTo: function () {
+                // console.log($location);
                 $anchorScroll();
             }
         };

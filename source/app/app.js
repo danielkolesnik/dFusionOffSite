@@ -22,7 +22,7 @@ angular
     .config( function ( $urlRouterProvider, $logProvider, $locationProvider, RestangularProvider, config ) {
         //
         $locationProvider.html5Mode(false);
-        // OTHERWICE
+        // OTHERWISE
         $urlRouterProvider.otherwise('/layout/home');
         // Do I need to have a log.debug message visible ?
         $logProvider.debugEnabled(!config.production);
