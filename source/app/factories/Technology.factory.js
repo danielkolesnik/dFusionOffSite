@@ -5,7 +5,7 @@ angular
 
     .module('app')
 
-    .factory('technologyFactory', function() {
+    .factory('Technology', function() {
         /**
          * Factory of technologies.
          * @param {obj} technology Object from incomingTechnologies.

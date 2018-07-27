@@ -106,7 +106,13 @@
         </div>
     </section>
 
-    <section class="container content">
+    <div class="waiting-for-data" data-ng-if="vm.teamGroups.length == 0">
+        <img src="assets/images/dFusionCloud.png" alt="">
+        <i class="fa fa-refresh fa-spin"></i>
+        <i class="fa fa-desktop fa-lg"></i>
+    </div>
+
+    <section class="container content" data-ng-if="vm.teamGroups.length != 0">
         <div class="row">
             <h2 class="animated fadeInDown heading">
                 <span class="title">Leadership team</span>
