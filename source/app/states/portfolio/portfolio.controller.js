@@ -4,7 +4,7 @@ angular
 
     .module('layout.portfolio')
 
-    .controller('portfolioController', function ($scope, $timeout, $uibModal, projectsService) {
+    .controller('portfolioController', function ($scope, $timeout, $uibModal, ProjectsService) {
 
 
         var vm = $scope.vm = {
@@ -34,7 +34,7 @@ angular
                     clicked.next = false;
                 }, 500);
             },
-            openModal: function open (currPlatform) {
+            openModal: function open(currPlatform) {
                 $uibModal.open({
                     animation: true,
                     ariaLabelledBy: 'modal-title',
@@ -57,53 +57,47 @@ angular
             }
         };
 
-        projectsService
+        ProjectsService
 
             .getProjectList()
 
             .then( function ( success ) {
-                //check is there are any projects?
-                if(success.length !== 0) {
-                    for(var i in success) {
-                        //will be set as selected by default platform to preview
-                        success[i].currPlatform = {};
-                        //count web projects
-                        if(success[i].tags.indexOf('web') !== -1) {
-                            vm.webProjectsCount++;
-                        }
-                        //count mobile projects
-                        if(success[i].tags.indexOf('mobile') !== -1) {
-                            vm.mobileProjectsCount++;
-                        }
-                        //check is there are any platforms? and if it is -> setting the first as currPlatform
-                        if(success[i].platforms.length !== 0) {
-                            for(var n in success[i].platforms) {
-                                //will be shown on the device screen
-                                success[i].platforms[n].currImg = '';
-                                //check is there are any images + frames? and if it is -> setting the first as currImg
-                                if((success[i].platforms[n].images.length !== 0)&&(success[i].platforms[n].frame.length !== 0)) { ///??
-                                    success[i].platforms[n].currImg = success[i].platforms[n].images[0];
-                                }
-                                else if(success[i].platforms[n].frame.length === 0) { ///??
-                                    success[i].platforms[n].frame = null;
-                                }
-                                else {
-                                    //ELSE currImg = null
-                                    success[i].platforms[n].currImg = null;
-                                }
-                            }
 
-                            success[i].currPlatform = success[i].platforms[0];
-                        }
-                        else {
-                            //ELSE currPlatform = null
-                            success[i].currPlatform = null;
-                        }
+                for(var i in success) {
+                    //will be set as selected by default platform to preview
+                    success[i].currPlatform = {};
+                    //count web projects
+                    if(success[i].tags.indexOf('web') !== -1) {
+                        vm.webProjectsCount++;
                     }
-                }
-                //and if it isn't -> setting project = null
-                else {
-                    success = null;
+                    //count mobile projects
+                    if(success[i].tags.indexOf('mobile') !== -1) {
+                        vm.mobileProjectsCount++;
+                    }
+                    //check is there are any platforms? and if it is -> setting the first as currPlatform
+                    if(success[i].platforms.length !== 0) {
+                        for(var n in success[i].platforms) {
+                            //will be shown on the device screen
+                            success[i].platforms[n].currImg = '';
+                            //check is there are any images + frames? and if it is -> setting the first as currImg
+                            if((success[i].platforms[n].images.length !== 0)&&(success[i].platforms[n].frame.length !== 0)) { ///??
+                                success[i].platforms[n].currImg = success[i].platforms[n].images[0];
+                            }
+                            else if(success[i].platforms[n].frame.length === 0) { ///??
+                                success[i].platforms[n].frame = null;
+                            }
+                            else {
+                                //ELSE currImg = null
+                                success[i].platforms[n].currImg = null;
+                            }
+                        }
+
+                        success[i].currPlatform = success[i].platforms[0];
+                    }
+                    else {
+                        //ELSE currPlatform = null
+                        success[i].currPlatform = null;
+                    }
                 }
 
                 vm.projects = success;

@@ -52,14 +52,21 @@
             </div>
         </div>
     </section>
-    <section class="container">
+
+    <div class="waiting-for-data" data-ng-if="vm.slides.length == 0">
+        <img src="assets/images/dFusionCloud.png" alt="">
+        <i class="fa fa-refresh fa-spin"></i>
+        <i class="fa fa-desktop fa-lg"></i>
+    </div>
+
+    <section class="container" data-ng-if="vm.slides.length != 0">
         <div class="testimonials-block">
             <h2 class="heading animated fadeInDown">
                 <span class="uppercase">Testimonials</span>
             </h2>
             <div class="testimonials-carousel">
-                <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-                    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                <div data-uib-carousel active="vm.active" data-interval="vm.myInterval" data-no-wrap="vm.noWrapSlides">
+                    <div data-uib-slide data-ng-repeat="slide in vm.slides track by slide.id" data-index="slide.id">
                         <span class="quote-symbol"></span>
                         <div class="slide-caption">
                             <p class="testim-text">{{slide.text}}</p>

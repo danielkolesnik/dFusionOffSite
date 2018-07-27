@@ -5,9 +5,9 @@ angular
 
     .module('app')
 
-    .factory('teammateFactory', function() {
+    .factory('Teammate', function() {
         /**
-         * Factory of teammates.
+         * Factory of teammates models.
          * @param {obj} teammate Object from incomingTeam.
          * @returns {void}.
          */
