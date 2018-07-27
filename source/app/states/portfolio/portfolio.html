@@ -5,7 +5,13 @@
         </div>
     </section>
 
-    <section class="content container">
+    <div class="waiting-for-data" data-ng-if="vm.projects.length == 0">
+        <img src="assets/images/dFusionCloud.png" alt="">
+        <i class="fa fa-refresh fa-spin"></i>
+        <i class="fa fa-desktop fa-lg"></i>
+    </div>
+
+    <section class="content container" data-ng-if="vm.projects.length != 0">
         <h2 class="animated fadeInDown heading">
             <span class="title"> What we have done </span>
         </h2>
@@ -18,14 +24,35 @@
         <!--</div>-->
         <div class="projects-filter row">
             <i class="fa fa-filter" aria-hidden="true"></i>
-            <a href role="button" data-ng-click="filterBy = 'all';" data-tooltip-placement="top" data-uib-tooltip="{{vm.totalProjectsCount}}">All</a>
+            <a href role="button"
+                data-ng-click="vm.filterBy = 'all';"
+                data-tooltip-placement="top"
+                data-uib-tooltip="{{vm.totalProjectsCount}}"
+                data-ng-class="{ active : vm.filterBy === 'all' }"
+                    >
+                All
+            </a>
             <span> / </span>
-            <a href role="button" data-ng-click="filterBy = 'web';" data-tooltip-placement="top" data-uib-tooltip="{{vm.webProjectsCount}}">Web</a>
+            <a href role="button"
+               data-ng-click="vm.filterBy = 'web';"
+               data-tooltip-placement="top"
+               data-uib-tooltip="{{vm.webProjectsCount}}"
+               data-ng-class="{ active : vm.filterBy == 'web' }"
+                    >
+                Web
+            </a>
             <span> / </span>
-            <a href role="button" data-ng-click="filterBy = 'mobile';" data-tooltip-placement="top" data-uib-tooltip="{{vm.mobileProjectsCount}}">Mobile</a>
+            <a href role="button"
+               data-ng-click="vm.filterBy = 'mobile';"
+               data-tooltip-placement="top"
+               data-uib-tooltip="{{vm.mobileProjectsCount}}"
+               data-ng-class="{ active : vm.filterBy == 'mobile' }"
+                    >
+                Mobile
+            </a>
         </div>
 
-        <div data-ng-if="vm.projects != null" class="project row" data-ng-repeat="prj in vm.projects | projectsFilter : filterBy">
+        <div data-ng-if="vm.projects != null" class="project row" data-ng-repeat="prj in vm.projects | projectsFilter : vm.filterBy">
             <div class="col-md-6 preview-first" data-ng-show="prj.previewFirst">
                 <div class="display" data-ng-if="prj.currPlatform!=null"
                      data-ng-class="prj.currPlatform.platform"

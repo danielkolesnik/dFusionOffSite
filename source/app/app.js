@@ -22,7 +22,7 @@ angular
     .config( function ( $urlRouterProvider, $logProvider, $locationProvider, RestangularProvider, config ) {
         //
         $locationProvider.html5Mode(false);
-        // OTHERWICE
+        // OTHERWISE
         $urlRouterProvider.otherwise('/layout/home');
         // Do I need to have a log.debug message visible ?
         $logProvider.debugEnabled(!config.production);
@@ -37,5 +37,7 @@ angular
         // Do I need to state parameters visible in the html view ?
         $rootScope.$state = $state;
         // log a configuration of aplication
-        console.log('app config\n', config);
+        $log;
+        config;
+        // console.log('app config\n', config);
     });

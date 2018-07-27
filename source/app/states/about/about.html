@@ -106,97 +106,37 @@
         </div>
     </section>
 
-    <section class="container content">
+    <div class="waiting-for-data" data-ng-if="vm.teamGroups.length == 0">
+        <img src="assets/images/dFusionCloud.png" alt="">
+        <i class="fa fa-refresh fa-spin"></i>
+        <i class="fa fa-desktop fa-lg"></i>
+    </div>
+
+    <section class="container content" data-ng-if="vm.teamGroups.length != 0">
         <div class="row">
             <h2 class="animated fadeInDown heading">
                 <span class="title">Leadership team</span>
             </h2>
         </div>
         <div class="team">
-            <div class="row animated fadeInLeft">
-                <div class="col-sm-4">
-                    <div class="row">
-                        <div class="teammate">
-                            <div class="col-md-4">
-                                <div class="teammate-picture">
-                                    <img src="../../../assets/images/team/Eugene.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="about">
-                                    <h3 class="name-and-post">Eugene Kalosha / CEO</h3>
-                                    <p>Mr. Eugene Kalosha is responsible for the development of the company strategy and overseeing the complete operation management. Strong technical and analytical background as well as outstanding leadership skills help him to lead dFusionTech towards success during the last 7 years.</p>
-                                </div>
+            <div class="row animated fadeIn"
+                 data-ng-if="vm.teamGroups != null"
+                 data-ng-repeat="group in vm.teamGroups"
+                    >
+                <div class="col-sm-4"
+                     data-ng-repeat="teammate in group"
+                     data-ng-class="{'col-sm-offset-2' : (($index == 0) && (group.length === 2)), 'col-sm-offset-4' : (($index == 0) && (group.length === 1))}"
+                        >
+                    <div class="teammate row clearfix">
+                        <div class="col-md-4">
+                            <div class="teammate-picture">
+                                <img data-ng-src="{{teammate.photo}}" alt="">
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="row">
-                        <div class="teammate">
-                            <div class="col-md-4">
-                                <div class="teammate-picture">
-                                    <img src="../../../assets/images/team/Illya.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="about">
-                                    <h3 class="name-and-post">Illya Prykhodko / CTO</h3>
-                                    <p>Mr. Prykhodko is responsible for engeneering competence, strategy and releasing of high quality solutions. He is a proven technology leader with over 13 years of experience in enterprise software development.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="row">
-                        <div class="teammate">
-                            <div class="col-md-4">
-                                <div class="teammate-picture">
-                                    <img src="../../../assets/images/team/Igor.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="about">
-                            <h3 class="name-and-post">Igor Kalosha / COO</h3>
-                            <p>Mr. Igor Kalosha is responsible for processes of project management for company in general and manages reporting for customers and partners.</p>
-                        </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row animated fadeInRight">
-                <div class="col-sm-4 col-sm-offset-2">
-                    <div class="row">
-                        <div class="teammate">
-                            <div class="col-md-4">
-                                <div class="teammate-picture">
-                                    <img src="../../../assets/images/team/Oleg.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="about">
-                            <h3 class="name-and-post">Oleg Pankiv / Chief Software Architect</h3>
-                            <p>Mr. Pankiv leads mobile application development teams within the company. He has strong proven experience in design, development and application customization for mobile platforms.</p>
-                        </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="row">
-                        <div class="teammate">
-                            <div class="col-md-4">
-                                <div class="teammate-picture">
-                                    <img src="../../../assets/images/team/Vadym.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="about">
-                                    <h3 class="name-and-post">Vadym Kalosha / VP R&D</h3><br class="height-fix">
-                                    <p>Dr. Vadym Kalosha drives innovations within the company by managing team of research engineers. He has extensive experience in performance tuning and implementing highload solutions.</p>
-                                </div>
+                        <div class="col-md-8">
+                            <div class="about">
+                                <h3 class="name-and-post">{{teammate.name}}</h3>
+                                <p>{{teammate.about}}</p>
                             </div>
                         </div>
                     </div>
