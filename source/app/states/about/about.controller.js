@@ -5,13 +5,13 @@ angular
 
     .module('layout.about')
 
-    .controller('aboutController', function ( $scope, TeamService ) {
+    .controller('aboutController', function ( $scope, TeammatesService ) {
 
         var vm = $scope.vm = {
             teamGroups: []
         };
 
-        TeamService
+        TeammatesService
 
             .getTeamList()
 

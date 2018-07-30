@@ -3,7 +3,7 @@
 
 angular
 // as a deep for root module
-    .module('layout.portfolio')
+    .module('app')
     // filter injector name
     .filter('projectsFilter', function () {
         return function(projects, filterBy) {

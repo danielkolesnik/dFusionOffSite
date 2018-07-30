@@ -5,7 +5,7 @@ angular
 
     .module('app')
 
-    .factory('Teammate', function() {
+    .factory('TeammateModel', function() {
         /**
          * Factory of teammates models.
          * @param {obj} teammate Object from incomingTeam.

@@ -5,7 +5,7 @@ angular
 
     .module('app')
 
-    .factory('Project', function() {
+    .factory('ProjectModel', function() {
         /**
          * Factory of products.
          * @param {obj} project Object from incomingProjects.

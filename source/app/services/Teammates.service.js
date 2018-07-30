@@ -5,10 +5,12 @@ angular
 
     .module('app')
 
-    .service('TeamService', function ($timeout, $q, Teammate, incomeTeam) {
+    .service('TeammatesService', function ($timeout, $q, TeammateModel, incomeTeam) {
         // var teamList = [];
 
         return {
+            // just takes array from constant and wraps all items from array in model by constructor
+            // returns promise which contain array of all teammates(on success)
             getTeamList: function() {
                 var deferred = $q.defer();
                 var teamList = [];
@@ -16,7 +18,7 @@ angular
                 $timeout(function() {
 
                     for(var i in incomeTeam) {
-                        teamList.push(new Teammate(incomeTeam[i]));
+                        teamList.push(new TeammateModel(incomeTeam[i]));
                     }
                     deferred.resolve( teamList );
 

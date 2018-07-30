@@ -5,7 +5,7 @@ angular
 
     .module('app')
 
-    .factory('Testimonial', function() {
+    .factory('TestimonialModel', function() {
         /**
          * Factory of technologies.
          * @param {obj} testimonial Object from incomeTestimonials.

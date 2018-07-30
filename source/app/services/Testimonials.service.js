@@ -5,10 +5,12 @@ angular
 
     .module('app')
 
-    .service('TestimonialsService', function($timeout, $q, Testimonial, incomeTestimonials) {
+    .service('TestimonialsService', function($timeout, $q, TestimonialModel, incomeTestimonials) {
         // var testimonialsList = [];
 
         return {
+            // just takes array from constant and wraps all items from array in model by constructor
+            // returns promise which contain array of all testimonials(on success)
             getTestimList: function () {
                 var deferred = $q.defer();
                 var testimonialsList = [];
@@ -16,7 +18,7 @@ angular
                 $timeout(function() {
 
                     for(var i in incomeTestimonials) {
-                        testimonialsList.push(new Testimonial(incomeTestimonials[i]));
+                        testimonialsList.push(new TestimonialModel(incomeTestimonials[i]));
                     }
                     deferred.resolve( testimonialsList );
 

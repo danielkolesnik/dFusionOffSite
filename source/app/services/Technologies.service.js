@@ -5,10 +5,12 @@ angular
 
     .module('app')
 
-    .service('TechnologiesService', function($timeout, $q, Technology, incomeTechnologies) {
+    .service('TechnologiesService', function($timeout, $q, TechnologyModel, incomeTechnologies) {
         // var technologiesList = [];
 
         return {
+            // just takes array from constant and wraps all items from array in model by constructor
+            // returns promise which contain array of all technologies(on success)
             getTechList: function () {
                 var deferred = $q.defer();
                 var technologiesList = [];
@@ -16,7 +18,7 @@ angular
                 $timeout(function() {
 
                     for(var i in incomeTechnologies) {
-                        technologiesList.push(new Technology(incomeTechnologies[i]));
+                        technologiesList.push(new TechnologyModel(incomeTechnologies[i]));
                     }
                     deferred.resolve( technologiesList );
 
